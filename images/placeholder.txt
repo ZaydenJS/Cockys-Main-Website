@@ -1,0 +1,17 @@
+This directory contains images for the Cock'ys Painting & Decorating website.
+
+Required images:
+- logo.png (company logo)
+- gallery/ directory with project images
+
+Gallery images needed:
+- interior-1.jpg to interior-4.jpg (interior painting projects)
+- exterior-1.jpg to exterior-3.jpg (exterior painting projects)
+- commercial-1.jpg to commercial-3.jpg (commercial projects)
+- roof-1.jpg to roof-2.jpg (roof restoration projects)
+- special-1.jpg to special-3.jpg (special effects projects)
+- wallpaper-1.jpg to wallpaper-2.jpg (wallpaper projects)
+
+All images should be high-quality, professional photos showcasing the company's work.
+Recommended dimensions: 800x600px minimum for gallery images.
+Logo should be transparent PNG format.

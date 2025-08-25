@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Mobile browser UI color: match header color -->
+    <meta
+      name="theme-color"
+      content="#3a3a3a"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#1a1a1a"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta name="msapplication-navbutton-color" content="#3a3a3a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>Contact Us - Cocky's Painting & Decorating</title>
+    <meta
+      name="description"
+      content="Get in touch with Cocky's Painting & Decorating for your free quote. Phone: 0434 433 226 | Email: cockyspainting@gmail.com"
+    />
+    <!-- Preload critical CSS -->
+    <link rel="preload" href="/css/style.css" as="style" />
+    <link rel="preload" href="/css/responsive.css" as="style" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="navbar">
+        <div class="nav-container">
+          <a href="index.html" class="logo">
+            <img
+              src="images/Updated.png"
+              alt="Cocky's Painting & Decorating Logo"
+              class="logo-img"
+            />
+            <div class="company-name">
+              <h1>COCKY'S</h1>
+              <span>PAINTING & DECORATING</span>
+            </div>
+          </a>
+          <div class="nav-right">
+            <ul class="nav-menu">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="about.html" class="nav-link">About</a></li>
+              <li><a href="services.html" class="nav-link">Services</a></li>
+              <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+              <li>
+                <a href="contact.html" class="nav-link active">Contact</a>
+              </li>
+            </ul>
+            <div class="contact-info">
+              <a href="tel:0434433226" class="phone-btn">
+                <i class="fas fa-phone"></i>
+                0434 433 226
+              </a>
+            </div>
+          </div>
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Premium Page Header -->
+    <section
+      class="premium-page-header"
+      style="
+        background: linear-gradient(135deg, #faf7f0 0%, #f5f1e8 100%);
+        padding: 120px 0 80px 0;
+        text-align: center;
+        margin-top: 0;
+      "
+    >
+      <div
+        class="container"
+        style="max-width: 1200px; margin: 0 auto; padding: 0 20px"
+      >
+        <div
+          class="page-header-badge"
+          style="
+            display: inline-block;
+            background: #f2d293;
+            color: #3a3a3a;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(242, 210, 147, 0.3);
+          "
+        >
+          <i class="fas fa-envelope" style="margin-right: 8px"></i>
+          Contact Us
+        </div>
+        <h1
+          style="
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #3a3a3a;
+            margin: 0 0 20px 0;
+            line-height: 1.2;
+          "
+        >
+          Get In Touch With Us
+        </h1>
+        <p
+          style="
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+          "
+        >
+          Ready to transform your space? Contact us today for your free
+          consultation and discover why clients choose Cocky's for their
+          painting needs
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section style="padding: 80px 0; background: var(--bg-card)">
+      <div class="container">
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+          "
+        >
+          <!-- Contact Information -->
+          <div>
+            <div style="margin-bottom: 40px">
+              <h2
+                style="
+                  font-family: 'Playfair Display', serif;
+                  font-size: 2.5rem;
+                  font-weight: 700;
+                  color: var(--text-secondary);
+                  margin-bottom: 15px;
+                "
+              >
+                Contact Information
+              </h2>
+              <p
+                style="
+                  color: var(--text-tertiary);
+                  font-size: 1.1rem;
+                  line-height: 1.6;
+                "
+              >
+                Ready to transform your space? Get in touch with us today for
+                your free consultation and quote.
+              </p>
+            </div>
+
+            <!-- Contact Details -->
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+                margin-bottom: 40px;
+              "
+            >
+              <div style="display: flex; align-items: center; gap: 15px">
+                <div
+                  style="
+                    width: 50px;
+                    height: 50px;
+                    background: linear-gradient(
+                      135deg,
+                      var(--primary-color),
+                      var(--primary-light)
+                    );
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    box-shadow: var(--shadow-warm);
+                  "
+                >
+                  <i
+                    class="fas fa-phone"
+                    style="color: var(--forest-primary); font-size: 18px"
+                  ></i>
+                </div>
+                <div>
+                  <h4
+                    style="
+                      color: var(--text-primary);
+                      font-weight: 600;
+                      margin: 0 0 5px 0;
+                    "
+                  >
+                    Phone
+                  </h4>
+                  <a
+                    href="tel:0434433226"
+                    style="
+                      color: var(--text-secondary);
+                      text-decoration: none;
+                      font-size: 1.1rem;
+                      font-weight: 500;
+                    "
+                    >0434 433 226</a
+                  >
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: 15px">
+                <div
+                  style="
+                    width: 50px;
+                    height: 50px;
+                    background: linear-gradient(
+                      135deg,
+                      var(--primary-color),
+                      var(--primary-light)
+                    );
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    box-shadow: var(--shadow-warm);
+                  "
+                >
+                  <i
+                    class="fas fa-envelope"
+                    style="color: var(--forest-primary); font-size: 18px"
+                  ></i>
+                </div>
+                <div>
+                  <h4
+                    style="
+                      color: var(--text-primary);
+                      font-weight: 600;
+                      margin: 0 0 5px 0;
+                    "
+                  >
+                    Email
+                  </h4>
+                  <a
+                    href="mailto:cockyspainting@gmail.com"
+                    style="
+                      color: var(--text-secondary);
+                      text-decoration: none;
+                      font-size: 1.1rem;
+                      font-weight: 500;
+                    "
+                    >cockyspainting@gmail.com</a
+                  >
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: 15px">
+                <div
+                  style="
+                    width: 50px;
+                    height: 50px;
+                    background: linear-gradient(
+                      135deg,
+                      var(--primary-color),
+                      var(--primary-light)
+                    );
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    box-shadow: var(--shadow-warm);
+                  "
+                >
+                  <i
+                    class="fas fa-id-card"
+                    style="color: var(--forest-primary); font-size: 18px"
+                  ></i>
+                </div>
+                <div>
+                  <h4
+                    style="
+                      color: var(--text-primary);
+                      font-weight: 600;
+                      margin: 0 0 5px 0;
+                    "
+                  >
+                    ABN
+                  </h4>
+                  <span
+                    style="
+                      color: var(--text-secondary);
+                      font-size: 1.1rem;
+                      font-weight: 500;
+                    "
+                    >51 500 448 995</span
+                  >
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: 15px">
+                <div
+                  style="
+                    width: 50px;
+                    height: 50px;
+                    background: linear-gradient(
+                      135deg,
+                      var(--primary-color),
+                      var(--primary-light)
+                    );
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    box-shadow: var(--shadow-warm);
+                  "
+                >
+                  <i
+                    class="fas fa-clock"
+                    style="color: var(--forest-primary); font-size: 18px"
+                  ></i>
+                </div>
+                <div>
+                  <h4
+                    style="
+                      color: var(--text-primary);
+                      font-weight: 600;
+                      margin: 0 0 5px 0;
+                    "
+                  >
+                    Business Hours
+                  </h4>
+                  <div style="color: var(--text-secondary); font-size: 1rem">
+                    <div>Monday - Saturday: 7:00 AM - 5:00 PM</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Call to Action Buttons -->
+            <div style="display: flex; gap: 15px; flex-wrap: wrap">
+              <a
+                href="tel:0434433226"
+                class="btn-premium-primary"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    var(--primary-color),
+                    var(--primary-light)
+                  );
+                  color: var(--forest-primary);
+                  padding: 15px 30px;
+                  border-radius: 8px;
+                  text-decoration: none;
+                  font-weight: 600;
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 10px;
+                  box-shadow: var(--shadow-warm);
+                  transition: var(--transition-normal);
+                "
+              >
+                <i class="fas fa-phone"></i>
+                Call Now
+              </a>
+              <a
+                href="mailto:cockyspainting@gmail.com"
+                class="btn-premium-call"
+                style="
+                  background: var(--forest-primary);
+                  color: var(--bg-card);
+                  padding: 15px 30px;
+                  border-radius: 8px;
+                  text-decoration: none;
+                  font-weight: 600;
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 10px;
+                  box-shadow: var(--shadow-md);
+                  transition: var(--transition-normal);
+                "
+              >
+                <i class="fas fa-envelope"></i>
+                Send Email
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div
+            style="
+              background: var(--bg-secondary);
+              padding: 40px;
+              border-radius: 15px;
+              box-shadow: var(--shadow-lg);
+            "
+          >
+            <h3
+              style="
+                font-family: 'Playfair Display', serif;
+                font-size: 2rem;
+                font-weight: 700;
+                color: var(--text-secondary);
+                margin-bottom: 10px;
+              "
+            >
+              Get Your Free Quote
+            </h3>
+            <p
+              style="
+                color: var(--text-tertiary);
+                margin-bottom: 30px;
+                line-height: 1.6;
+              "
+            >
+              Fill out the form below and we'll get back to you within 24 hours
+              with your personalized quote.
+            </p>
+
+            <form
+              action="https://api.web3forms.com/submit"
+              method="POST"
+              style="display: flex; flex-direction: column; gap: 20px"
+            >
+              <!-- Web3Forms Access Key -->
+              <input
+                type="hidden"
+                name="access_key"
+                value="dacef0f4-c1b7-4937-a673-e53a54cee5fc"
+              />
+
+              <!-- Optional: Subject line -->
+              <input
+                type="hidden"
+                name="subject"
+                value="New Contact Form Submission from Cocky's Painting Website"
+              />
+
+              <!-- Optional: From name -->
+              <input
+                type="hidden"
+                name="from_name"
+                value="Cocky's Painting Website"
+              />
+
+              <div
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px"
+              >
+                <div>
+                  <label
+                    style="
+                      display: block;
+                      color: var(--text-primary);
+                      font-weight: 600;
+                      margin-bottom: 8px;
+                    "
+                    >First Name *</label
+                  >
+                  <input
+                    type="text"
+                    name="first_name"
+                    required
+                    style="
+                      width: 100%;
+                      padding: 12px 15px;
+                      border: 2px solid var(--text-muted);
+                      border-radius: 8px;
+                      font-size: 16px;
+                      transition: var(--transition-normal);
+                      box-sizing: border-box;
+                      background: var(--bg-card);
+                      color: var(--text-secondary);
+                    "
+                  />
+                </div>
+                <div>
+                  <label
+                    style="
+                      display: block;
+                      color: var(--text-primary);
+                      font-weight: 600;
+                      margin-bottom: 8px;
+                    "
+                    >Last Name *</label
+                  >
+                  <input
+                    type="text"
+                    name="last_name"
+                    required
+                    style="
+                      width: 100%;
+                      padding: 12px 15px;
+                      border: 2px solid var(--text-muted);
+                      border-radius: 8px;
+                      font-size: 16px;
+                      transition: var(--transition-normal);
+                      box-sizing: border-box;
+                      background: var(--bg-card);
+                      color: var(--text-secondary);
+                    "
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  style="
+                    display: block;
+                    color: var(--text-primary);
+                    font-weight: 600;
+                    margin-bottom: 8px;
+                  "
+                  >Email Address *</label
+                >
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  style="
+                    width: 100%;
+                    padding: 12px 15px;
+                    border: 2px solid var(--text-muted);
+                    border-radius: 8px;
+                    font-size: 16px;
+                    transition: var(--transition-normal);
+                    box-sizing: border-box;
+                    background: var(--bg-card);
+                    color: var(--text-secondary);
+                  "
+                />
+              </div>
+
+              <div>
+                <label
+                  style="
+                    display: block;
+                    color: var(--text-primary);
+                    font-weight: 600;
+                    margin-bottom: 8px;
+                  "
+                  >Phone Number *</label
+                >
+                <input
+                  type="tel"
+                  name="phone"
+                  required
+                  style="
+                    width: 100%;
+                    padding: 12px 15px;
+                    border: 2px solid var(--text-muted);
+                    border-radius: 8px;
+                    font-size: 16px;
+                    transition: var(--transition-normal);
+                    box-sizing: border-box;
+                    background: var(--bg-card);
+                    color: var(--text-secondary);
+                  "
+                />
+              </div>
+
+              <div>
+                <label
+                  style="
+                    display: block;
+                    color: var(--text-primary);
+                    font-weight: 600;
+                    margin-bottom: 8px;
+                  "
+                  >Project Details</label
+                >
+                <textarea
+                  name="message"
+                  rows="4"
+                  placeholder="Please describe your project, including size, timeline, and any specific requirements..."
+                  style="
+                    width: 100%;
+                    padding: 12px 15px;
+                    border: 2px solid var(--text-muted);
+                    border-radius: 8px;
+                    font-size: 16px;
+                    transition: var(--transition-normal);
+                    resize: vertical;
+                    font-family: inherit;
+                    box-sizing: border-box;
+                    background: var(--bg-card);
+                    color: var(--text-secondary);
+                  "
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="btn-premium-primary"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    var(--primary-color),
+                    var(--primary-light)
+                  );
+                  color: var(--forest-primary);
+                  padding: 15px 30px;
+                  border: none;
+                  border-radius: 8px;
+                  font-size: 16px;
+                  font-weight: 600;
+                  cursor: pointer;
+                  transition: var(--transition-normal);
+                  box-shadow: var(--shadow-warm);
+                "
+              >
+                <i class="fas fa-paper-plane" style="margin-right: 10px"></i>
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section style="padding: 80px 0; background: var(--bg-secondary)">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 60px">
+          <div
+            style="
+              display: inline-block;
+              background: linear-gradient(
+                135deg,
+                var(--primary-color),
+                var(--primary-light)
+              );
+              color: var(--forest-primary);
+              padding: 12px 24px;
+              border-radius: 25px;
+              font-weight: 600;
+              font-size: 14px;
+              margin-bottom: 20px;
+              box-shadow: var(--shadow-warm);
+            "
+          >
+            <i class="fas fa-question-circle" style="margin-right: 8px"></i>
+            FAQ
+          </div>
+          <h2
+            style="
+              font-family: 'Playfair Display', serif;
+              font-size: 2.5rem;
+              font-weight: 700;
+              color: var(--text-secondary);
+              margin-bottom: 15px;
+            "
+          >
+            Frequently Asked Questions
+          </h2>
+          <p
+            style="
+              color: var(--text-tertiary);
+              font-size: 1.1rem;
+              max-width: 600px;
+              margin: 0 auto;
+              line-height: 1.6;
+            "
+          >
+            Quick answers to common questions about our painting and decorating
+            services
+          </p>
+        </div>
+
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+          "
+        >
+          <div
+            style="
+              background: var(--bg-card);
+              padding: 30px;
+              border-radius: 15px;
+              box-shadow: var(--shadow-md);
+            "
+          >
+            <h3
+              style="
+                color: var(--text-primary);
+                font-weight: 600;
+                margin-bottom: 15px;
+                font-size: 1.2rem;
+              "
+            >
+              How long does a typical painting project take?
+            </h3>
+            <p
+              style="color: var(--text-secondary); line-height: 1.6; margin: 0"
+            >
+              Project duration depends on size and complexity. A single room
+              typically takes 1-2 days, while a whole house can take 1-2 weeks.
+              We'll provide a detailed timeline with your quote.
+            </p>
+          </div>
+
+          <div
+            style="
+              background: var(--bg-card);
+              padding: 30px;
+              border-radius: 15px;
+              box-shadow: var(--shadow-md);
+            "
+          >
+            <h3
+              style="
+                color: var(--text-primary);
+                font-weight: 600;
+                margin-bottom: 15px;
+                font-size: 1.2rem;
+              "
+            >
+              Do you provide free quotes?
+            </h3>
+            <p
+              style="color: var(--text-secondary); line-height: 1.6; margin: 0"
+            >
+              Yes! We offer free, no-obligation quotes for all projects. We'll
+              assess your space and provide detailed pricing and timeline
+              information.
+            </p>
+          </div>
+
+          <div
+            style="
+              background: var(--bg-card);
+              padding: 30px;
+              border-radius: 15px;
+              box-shadow: var(--shadow-md);
+            "
+          >
+            <h3
+              style="
+                color: var(--text-primary);
+                font-weight: 600;
+                margin-bottom: 15px;
+                font-size: 1.2rem;
+              "
+            >
+              What type of paint do you use?
+            </h3>
+            <p
+              style="color: var(--text-secondary); line-height: 1.6; margin: 0"
+            >
+              We use only premium quality paints from leading brands. We'll
+              recommend the best paint type for your specific project and budget
+              requirements.
+            </p>
+          </div>
+
+          <div
+            style="
+              background: var(--bg-card);
+              padding: 30px;
+              border-radius: 15px;
+              box-shadow: var(--shadow-md);
+            "
+          >
+            <h3
+              style="
+                color: var(--text-primary);
+                font-weight: 600;
+                margin-bottom: 15px;
+                font-size: 1.2rem;
+              "
+            >
+              Are you licensed and insured?
+            </h3>
+            <p
+              style="color: var(--text-secondary); line-height: 1.6; margin: 0"
+            >
+              Yes, we are fully licensed contractors with comprehensive
+              liability and workers' compensation insurance for your complete
+              peace of mind.
+            </p>
+          </div>
+
+          <div
+            style="
+              background: var(--bg-card);
+              padding: 30px;
+              border-radius: 15px;
+              box-shadow: var(--shadow-md);
+            "
+          >
+            <h3
+              style="
+                color: var(--text-primary);
+                font-weight: 600;
+                margin-bottom: 15px;
+                font-size: 1.2rem;
+              "
+            >
+              Do you offer warranties?
+            </h3>
+            <p
+              style="color: var(--text-secondary); line-height: 1.6; margin: 0"
+            >
+              We stand behind our work with comprehensive warranties ranging
+              from 1-5 years depending on the service package and materials
+              used.
+            </p>
+          </div>
+
+          <div
+            style="
+              background: var(--bg-card);
+              padding: 30px;
+              border-radius: 15px;
+              box-shadow: var(--shadow-md);
+            "
+          >
+            <h3
+              style="
+                color: var(--text-primary);
+                font-weight: 600;
+                margin-bottom: 15px;
+                font-size: 1.2rem;
+              "
+            >
+              Can you work around my schedule?
+            </h3>
+            <p
+              style="color: var(--text-secondary); line-height: 1.6; margin: 0"
+            >
+              Absolutely! We offer flexible scheduling including evenings and
+              weekends to minimize disruption to your daily routine.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-logo">
+              <img
+                src="images/Updated.png"
+                alt="Cocky's Painting & Decorating"
+              />
+              <h3>COCKY'S PAINTING & DECORATING</h3>
+            </div>
+            <p>
+              Premium painting and decorating services with uncompromising
+              quality and professional excellence.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h4>Contact Info</h4>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <span>0434 433 226</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <span>cockyspainting@gmail.com</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-id-card"></i>
+              <span>ABN: 51 500 448 995</span>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h4>Services</h4>
+            <ul>
+              <li>
+                <a href="services.html#interior-painting">Interior Painting</a>
+              </li>
+              <li>
+                <a href="services.html#exterior-painting">Exterior Painting</a>
+              </li>
+              <li><a href="services.html#commercial">Commercial</a></li>
+              <li>
+                <a href="services.html#decorative-finishes"
+                  >Decorative Finishes</a
+                >
+              </li>
+              <li>
+                <a href="services.html#concrete-coatings">Concrete Coatings</a>
+              </li>
+              <li>
+                <a href="services.html#deck-fence-restoration"
+                  >Deck & Fence Restoration</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Cocky's Painting & Decorating. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+    <!-- Backend-only booster: zero visual impact -->
+    <script src="js/boost-performance.js"></script>
+    <script src="js/boost-performance-2.js"></script>
+    <script src="js/boost-performance-3.js"></script>
+    <script src="js/boost-performance-4.js"></script>
+  </body>
+</html>

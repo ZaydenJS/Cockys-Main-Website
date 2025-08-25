@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Mobile browser UI color: match header color -->
+    <meta
+      name="theme-color"
+      content="#3a3a3a"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#1a1a1a"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta name="msapplication-navbutton-color" content="#3a3a3a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>Gallery - Cocky's Painting & Decorating</title>
+    <meta
+      name="description"
+      content="View our recent painting and decorating projects. Quality craftsmanship and attention to detail in every job."
+    />
+    <!-- Preload critical CSS -->
+    <link rel="preload" href="/css/style.css" as="style" />
+    <link rel="preload" href="/css/responsive.css" as="style" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="navbar">
+        <div class="nav-container">
+          <a href="index.html" class="logo">
+            <img
+              src="images/Updated.png"
+              alt="Cocky's Painting & Decorating Logo"
+              class="logo-img"
+            />
+            <div class="company-name">
+              <h1>COCKY'S</h1>
+              <span>PAINTING & DECORATING</span>
+            </div>
+          </a>
+          <div class="nav-right">
+            <ul class="nav-menu">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="about.html" class="nav-link">About</a></li>
+              <li><a href="services.html" class="nav-link">Services</a></li>
+              <li>
+                <a href="gallery.html" class="nav-link active">Gallery</a>
+              </li>
+              <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="contact-info">
+              <a href="tel:0434433226" class="phone-btn">
+                <i class="fas fa-phone"></i>
+                0434 433 226
+              </a>
+            </div>
+          </div>
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Premium Page Header -->
+    <section
+      class="premium-page-header"
+      style="
+        background: linear-gradient(135deg, #faf7f0 0%, #f5f1e8 100%);
+        padding: 120px 0 80px 0;
+        text-align: center;
+        margin-top: 0;
+      "
+    >
+      <div
+        class="container"
+        style="max-width: 1200px; margin: 0 auto; padding: 0 20px"
+      >
+        <div
+          class="page-header-badge"
+          style="
+            display: inline-block;
+            background: #f2d293;
+            color: #3a3a3a;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(242, 210, 147, 0.3);
+          "
+        >
+          <i class="fas fa-images" style="margin-right: 8px"></i>
+          Our Gallery
+        </div>
+        <h1
+          style="
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #3a3a3a;
+            margin: 0 0 20px 0;
+            line-height: 1.2;
+          "
+        >
+          Our Work Showcase
+        </h1>
+        <p
+          style="
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+          "
+        >
+          Explore our recent projects and see the quality craftsmanship that
+          sets Cocky's apart in every painting and decorating job
+        </p>
+      </div>
+    </section>
+
+    <!-- Clean Gallery Section -->
+    <section class="clean-gallery" style="padding: 80px 0">
+      <div class="container">
+        <div class="gallery-grid-clean">
+          <!-- Project 1 -->
+          <div class="gallery-card">
+            <div class="card-image">
+              <img
+                src="images/gallery/Interior Painting.jpg"
+                alt="Interior Painting Project"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 15px;
+                "
+              />
+            </div>
+            <div class="card-content">
+              <h3>Interior Painting</h3>
+              <p>Complete room transformation with premium paint finishes</p>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="gallery-card">
+            <div class="card-image">
+              <img
+                src="images/gallery/Exterior Painting.jpg"
+                alt="Exterior Painting Project"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 15px;
+                "
+              />
+            </div>
+            <div class="card-content">
+              <h3>Exterior Painting</h3>
+              <p>Fresh exterior paint enhancing curb appeal and protection</p>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="gallery-card">
+            <div class="card-image">
+              <img
+                src="images/gallery/Commercial.jpg"
+                alt="Commercial Project"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 15px;
+                "
+              />
+            </div>
+            <div class="card-content">
+              <h3>Commercial</h3>
+              <p>Professional painting for modern office environments</p>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="gallery-card">
+            <div class="card-image">
+              <img
+                src="images/gallery/Decorative Finishes.jpg"
+                alt="Decorative Finishes Project"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 15px;
+                "
+              />
+            </div>
+            <div class="card-content">
+              <h3>Decorative Finishes</h3>
+              <p>Beautiful decorative finishes with attention to detail</p>
+            </div>
+          </div>
+
+          <!-- Project 5 -->
+          <div class="gallery-card">
+            <div class="card-image">
+              <img
+                src="images/gallery/Concrete Coatings.png"
+                alt="Concrete Coatings Project"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 15px;
+                "
+              />
+            </div>
+            <div class="card-content">
+              <h3>Concrete Coatings</h3>
+              <p>Professional concrete coating and sealing services</p>
+            </div>
+          </div>
+
+          <!-- Project 6 -->
+          <div class="gallery-card">
+            <div class="card-image">
+              <img
+                src="images/gallery/Deck & Fence Restoration.png"
+                alt="Deck & Fence Restoration Project"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 15px;
+                "
+              />
+            </div>
+            <div class="card-content">
+              <h3>Deck & Fence Restoration</h3>
+              <p>Protective and beautiful outdoor wood restoration</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Ready to Start Your Project?</h2>
+          <p>
+            Contact us today for a free consultation and quote for your painting
+            project.
+          </p>
+          <div class="cta-buttons">
+            <a href="tel:0434433226" class="btn btn-primary">
+              <i class="fas fa-phone"></i>
+              Call Now: 0434 433 226
+            </a>
+            <a href="contact.html" class="btn btn-secondary">Request Quote</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-logo">
+              <img
+                src="images/Updated.png"
+                alt="Cocky's Painting & Decorating"
+              />
+              <h3>COCKY'S PAINTING & DECORATING</h3>
+            </div>
+            <p>
+              Premium painting and decorating services with uncompromising
+              quality and professional excellence.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h4>Contact Info</h4>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <span>0434 433 226</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <span>cockyspainting@gmail.com</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-id-card"></i>
+              <span>ABN: 51 500 448 995</span>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h4>Services</h4>
+            <ul>
+              <li>
+                <a href="services.html#interior-painting">Interior Painting</a>
+              </li>
+              <li>
+                <a href="services.html#exterior-painting">Exterior Painting</a>
+              </li>
+              <li><a href="services.html#commercial">Commercial</a></li>
+              <li>
+                <a href="services.html#decorative-finishes"
+                  >Decorative Finishes</a
+                >
+              </li>
+              <li>
+                <a href="services.html#concrete-coatings">Concrete Coatings</a>
+              </li>
+              <li>
+                <a href="services.html#deck-fence-restoration"
+                  >Deck & Fence Restoration</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Cocky's Painting & Decorating. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Gallery Lightbox Modal -->
+    <div id="gallery-lightbox" class="lightbox-overlay">
+      <div class="lightbox-container">
+        <button
+          class="lightbox-nav lightbox-prev"
+          onclick="previousGalleryImage()"
+          aria-label="Previous image"
+        >
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button
+          class="lightbox-nav lightbox-next"
+          onclick="nextGalleryImage()"
+          aria-label="Next image"
+        >
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="lightbox-content">
+          <img id="gallery-lightbox-image" src="" alt="Gallery Image" />
+          <button
+            class="lightbox-close"
+            onclick="closeGalleryLightbox()"
+            aria-label="Close lightbox"
+            style="position: absolute; top: 8px; right: 8px"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+    <script src="js/gallery-lightbox.js"></script>
+    <!-- Backend-only booster: zero visual impact -->
+    <script src="js/boost-performance.js"></script>
+    <script src="js/boost-performance-2.js"></script>
+    <script src="js/boost-performance-3.js"></script>
+    <script src="js/boost-performance-4.js"></script>
+  </body>
+</html>

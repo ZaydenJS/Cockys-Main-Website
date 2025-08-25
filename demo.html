@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Mobile browser UI color: match header color -->
+    <meta
+      name="theme-color"
+      content="#3a3a3a"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#1a1a1a"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta name="msapplication-navbutton-color" content="#3a3a3a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>Gallery Demo - Cocky's Painting & Decorating</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      /* Placeholder image styles */
+      .placeholder-img {
+        background: linear-gradient(135deg, #f2d293, #e6c078);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #2c1810;
+        font-weight: 600;
+        text-align: center;
+        padding: 2rem;
+        min-height: 250px;
+      }
+
+      .demo-note {
+        background: #fff3cd;
+        border: 1px solid #ffeaa7;
+        color: #856404;
+        padding: 1rem;
+        border-radius: 10px;
+        margin: 2rem 0;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="navbar">
+        <div class="nav-container">
+          <div class="logo">
+            <div
+              class="placeholder-img"
+              style="
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                min-height: 50px;
+                padding: 0;
+                font-size: 0.7rem;
+              "
+            >
+              LOGO
+            </div>
+            <div class="logo-text">
+              <h1>COCKY'S</h1>
+              <span>PAINTING & DECORATING</span>
+            </div>
+          </div>
+          <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="services.html" class="nav-link">Services</a></li>
+            <li>
+              <a href="portfolio.html" class="nav-link active">Portfolio</a>
+            </li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+          <div class="contact-info">
+            <a href="tel:0434433226" class="phone-btn">
+              <i class="fas fa-phone"></i>
+              0434 433 226
+            </a>
+          </div>
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1>Gallery Demo</h1>
+        <p>
+          Interactive gallery showcase with filtering and lightbox functionality
+        </p>
+        <div class="demo-note">
+          <strong>Demo Note:</strong> This page demonstrates the gallery
+          functionality with placeholder images. Replace these with actual
+          project photos for the live website.
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Gallery -->
+    <section class="gallery-section">
+      <div class="container">
+        <!-- Filter Buttons -->
+        <div class="gallery-filter">
+          <button class="filter-btn active" data-filter="all">
+            All Projects
+          </button>
+          <button class="filter-btn" data-filter="interior">Interior</button>
+          <button class="filter-btn" data-filter="exterior">Exterior</button>
+          <button class="filter-btn" data-filter="commercial">
+            Commercial
+          </button>
+          <button class="filter-btn" data-filter="roof">
+            Roof Restoration
+          </button>
+          <button class="filter-btn" data-filter="special">
+            Special Effects
+          </button>
+          <button class="filter-btn" data-filter="wallpaper">Wallpaper</button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid">
+          <!-- Interior Projects -->
+          <div class="gallery-item" data-category="interior">
+            <div class="placeholder-img">
+              <div>
+                <i
+                  class="fas fa-home"
+                  style="font-size: 2rem; margin-bottom: 1rem; display: block"
+                ></i>
+                Modern Living Room<br />
+                <small>Interior Painting</small>
+              </div>
+            </div>
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+              <h4>Modern Living Room</h4>
+              <p>Complete interior transformation with premium finishes</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="interior">
+            <div class="placeholder-img">
+              <div>
+                <i
+                  class="fas fa-bed"
+                  style="font-size: 2rem; margin-bottom: 1rem; display: block"
+                ></i>
+                Master Bedroom<br />
+                <small>Interior Design</small>
+              </div>
+            </div>
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+              <h4>Master Bedroom Suite</h4>
+              <p>Elegant color scheme with accent walls</p>
+            </div>
+          </div>
+
+          <!-- Exterior Projects -->
+          <div class="gallery-item" data-category="exterior">
+            <div class="placeholder-img">
+              <div>
+                <i
+                  class="fas fa-building"
+                  style="font-size: 2rem; margin-bottom: 1rem; display: block"
+                ></i>
+                Victorian Home<br />
+                <small>Exterior Restoration</small>
+              </div>
+            </div>
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+              <h4>Victorian Home Restoration</h4>
+              <p>Complete exterior makeover with period colors</p>
+            </div>
+          </div>
+
+          <!-- Commercial Projects -->
+          <div class="gallery-item" data-category="commercial">
+            <div class="placeholder-img">
+              <div>
+                <i
+                  class="fas fa-briefcase"
+                  style="font-size: 2rem; margin-bottom: 1rem; display: block"
+                ></i>
+                Corporate Office<br />
+                <small>Commercial Project</small>
+              </div>
+            </div>
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+              <h4>Corporate Office Complex</h4>
+              <p>Large-scale commercial interior project</p>
+            </div>
+          </div>
+
+          <!-- Roof Restoration -->
+          <div class="gallery-item" data-category="roof">
+            <div class="placeholder-img">
+              <div>
+                <i
+                  class="fas fa-tools"
+                  style="font-size: 2rem; margin-bottom: 1rem; display: block"
+                ></i>
+                Tile Roof<br />
+                <small>Restoration Project</small>
+              </div>
+            </div>
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+              <h4>Tile Roof Restoration</h4>
+              <p>Complete cleaning, repair, and protective coating</p>
+            </div>
+          </div>
+
+          <!-- Special Effects -->
+          <div class="gallery-item" data-category="special">
+            <div class="placeholder-img">
+              <div>
+                <i
+                  class="fas fa-palette"
+                  style="font-size: 2rem; margin-bottom: 1rem; display: block"
+                ></i>
+                Venetian Plaster<br />
+                <small>Special Effects</small>
+              </div>
+            </div>
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+              <h4>Venetian Plaster Feature</h4>
+              <p>Luxury decorative finish with metallic accents</p>
+            </div>
+          </div>
+
+          <!-- Wallpaper -->
+          <div class="gallery-item" data-category="wallpaper">
+            <div class="placeholder-img">
+              <div>
+                <i
+                  class="fas fa-scroll"
+                  style="font-size: 2rem; margin-bottom: 1rem; display: block"
+                ></i>
+                Designer Wallpaper<br />
+                <small>Premium Installation</small>
+              </div>
+            </div>
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+              <h4>Designer Wallpaper Suite</h4>
+              <p>Premium wallpaper installation with perfect alignment</p>
+            </div>
+          </div>
+
+          <!-- Additional items for demonstration -->
+          <div class="gallery-item" data-category="interior">
+            <div class="placeholder-img">
+              <div>
+                <i
+                  class="fas fa-utensils"
+                  style="font-size: 2rem; margin-bottom: 1rem; display: block"
+                ></i>
+                Decorative Finishes<br />
+                <small>Interior Painting</small>
+              </div>
+            </div>
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+              <h4>Contemporary Kitchen</h4>
+              <p>Cabinet refinishing and wall painting</p>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="exterior">
+            <div class="placeholder-img">
+              <div>
+                <i
+                  class="fas fa-tree"
+                  style="font-size: 2rem; margin-bottom: 1rem; display: block"
+                ></i>
+                Deck Restoration<br />
+                <small>Exterior Staining</small>
+              </div>
+            </div>
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus"></i>
+              <h4>Timber Deck Restoration</h4>
+              <p>Professional staining and weatherproofing</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem">
+          <p
+            style="color: var(--text-color); opacity: 0.7; margin-bottom: 2rem"
+          >
+            Click on any image to open the lightbox viewer. Use the filter
+            buttons to sort by project type.
+          </p>
+          <a href="index.html" class="btn btn-primary">Back to Homepage</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="gallery-lightbox" id="lightbox">
+      <div class="lightbox-content">
+        <button class="lightbox-close" id="lightbox-close">&times;</button>
+        <button class="lightbox-nav lightbox-prev" id="lightbox-prev">
+          &#8249;
+        </button>
+        <div
+          class="placeholder-img"
+          id="lightbox-img"
+          style="min-height: 400px; border-radius: 10px"
+        >
+          Lightbox Image Placeholder
+        </div>
+        <button class="lightbox-nav lightbox-next" id="lightbox-next">
+          &#8250;
+        </button>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+      // Override lightbox functionality for demo
+      document.addEventListener("DOMContentLoaded", function () {
+        const galleryItems = document.querySelectorAll(".gallery-item");
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+
+        galleryItems.forEach((item) => {
+          item.addEventListener("click", function () {
+            const title = this.querySelector(".gallery-overlay h4").textContent;
+            const description =
+              this.querySelector(".gallery-overlay p").textContent;
+
+            lightboxImg.innerHTML = `
+                        <div style="text-align: center;">
+                            <i class="fas fa-image" style="font-size: 4rem; margin-bottom: 2rem; display: block; color: var(--secondary-color);"></i>
+                            <h3 style="color: var(--secondary-color); margin-bottom: 1rem;">${title}</h3>
+                            <p style="color: var(--text-color); opacity: 0.8;">${description}</p>
+                            <small style="color: var(--text-color); opacity: 0.6;">Replace with actual project photo</small>
+                        </div>
+                    `;
+
+            lightbox.style.display = "flex";
+            document.body.style.overflow = "hidden";
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
