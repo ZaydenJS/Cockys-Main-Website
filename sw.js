@@ -36,6 +36,11 @@ const CORE_ASSETS = [
   "/css/style.css",
   "/css/responsive.css",
   "/js/main.js",
+  "/js/resource-prioritizer.js",
+  "/js/image-optimizer.js",
+  "/js/boost-performance.js",
+  "/images/Updated.png",
+  "/videos/test.mp4",
 ];
 
 self.addEventListener("install", (event) => {

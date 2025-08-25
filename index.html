@@ -22,9 +22,470 @@
       name="description"
       content="Professional painting and decorating services. Interior, exterior, commercial, roof restoration, and special effects. Premium quality guaranteed."
     />
-    <!-- Preload critical CSS to speed up render without changing visuals -->
-    <link rel="preload" href="/css/style.css" as="style" />
-    <link rel="preload" href="/css/responsive.css" as="style" />
+    <!-- Critical CSS inlined for instant render -->
+    <style>
+      /* Critical Reset and Variables */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0;
+        outline: 0;
+      }
+      :root {
+        --primary-color: #f2d293;
+        --primary-light: #f7e0a8;
+        --primary-dark: #e8c478;
+        --primary-accent: #f5d89f;
+        --forest-primary: #2c3e2d;
+        --forest-light: #3a4f3b;
+        --forest-dark: #1f2b20;
+        --forest-muted: #4a5d4b;
+        --terracotta: #c17b5a;
+        --terracotta-light: #d19075;
+        --terracotta-dark: #a86b4a;
+        --charcoal-primary: #3a3a3a;
+        --charcoal-light: #4f4f4f;
+        --charcoal-dark: #2a2a2a;
+        --sage-primary: #8b9a8c;
+        --sage-light: #a1afa2;
+        --sage-dark: #7a8a7b;
+        --sage-muted: #9cab9d;
+        --blue-muted: #5d7a8b;
+        --blue-light: #7a94a3;
+        --blue-dark: #4a6373;
+        --cream-primary: #f8f6f0;
+        --cream-light: #faf9f5;
+        --cream-dark: #f5f2ea;
+        --ivory-primary: #fefcf7;
+        --ivory-light: #fffef9;
+        --ivory-dark: #fcf9f2;
+        --text-primary: #2c3e2d;
+        --text-secondary: #4a5d4b;
+        --text-muted: #6b7c6c;
+        --text-light: #8b9a8c;
+        --bg-primary: #fefcf7;
+        --bg-secondary: #f8f6f0;
+        --bg-accent: #f5f2ea;
+        --bg-overlay: rgba(44, 62, 45, 0.05);
+        --shadow-sm: 0 2px 4px rgba(44, 62, 45, 0.08);
+        --shadow-md: 0 4px 12px rgba(44, 62, 45, 0.12);
+        --shadow-lg: 0 8px 24px rgba(44, 62, 45, 0.16);
+        --shadow-xl: 0 16px 40px rgba(44, 62, 45, 0.2);
+        --shadow-warm: 0 4px 20px rgba(242, 210, 147, 0.15);
+        --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        color: var(--text-primary);
+        background-color: var(--bg-primary);
+        overflow-x: hidden;
+      }
+      *,
+      *::before,
+      *::after {
+        max-width: 100%;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Playfair Display", serif;
+        font-weight: 600;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+        color: var(--text-primary);
+      }
+      h1 {
+        font-size: 3.5rem;
+      }
+      h2 {
+        font-size: 2.5rem;
+      }
+      h3 {
+        font-size: 1.8rem;
+      }
+      h4 {
+        font-size: 1.4rem;
+      }
+      p {
+        margin-bottom: 1rem;
+        font-weight: 400;
+        color: var(--text-secondary);
+      }
+
+      /* Critical Header Styles */
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: rgba(58, 58, 58, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        transition: var(--transition-normal);
+        border-bottom: 1px solid var(--primary-color);
+        box-shadow: var(--shadow-sm);
+      }
+      .navbar {
+        padding: 1rem 0;
+      }
+      .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: inherit;
+        transition: opacity 0.3s ease;
+      }
+      .logo:hover {
+        opacity: 0.8;
+      }
+      .logo-img {
+        width: 65px;
+        height: 65px;
+        object-fit: contain;
+      }
+      .company-name {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+      }
+      .company-name h1 {
+        font-size: 1.8rem;
+        color: var(--primary-color);
+        margin: 0;
+        font-weight: 700;
+      }
+      .company-name span {
+        font-size: 0.9rem;
+        color: #cccccc;
+        font-weight: 500;
+      }
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        margin: 0;
+        padding: 0;
+      }
+      .nav-menu a {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 500;
+        transition: var(--transition-fast);
+        position: relative;
+      }
+      .nav-menu a:hover {
+        color: var(--primary-color);
+      }
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 4px;
+      }
+      .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: #ffffff;
+        transition: var(--transition-fast);
+      }
+
+      /* Critical Hero Styles */
+      .hero-video {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .video-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+      .video-background video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(44, 62, 45, 0.4),
+          rgba(58, 58, 58, 0.3)
+        );
+        z-index: 2;
+      }
+      .hero-content-overlay {
+        position: relative;
+        z-index: 3;
+        text-align: center;
+        color: white;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 2rem;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+      .hero-brand {
+        margin-bottom: 3rem;
+        animation: fadeInDown 1s ease-out;
+      }
+      .hero-brand .company-name h1 {
+        font-size: 3rem;
+        font-weight: 900;
+        color: white;
+        margin: 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        letter-spacing: 2px;
+      }
+      .hero-brand .company-name span {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--primary-color);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        letter-spacing: 1px;
+        display: block;
+        margin-top: 0.5rem;
+      }
+      .hero-main-content {
+        margin-bottom: 2.5rem;
+        animation: fadeInUp 1s ease-out 0.3s both;
+      }
+      .hero-video .hero-title {
+        font-size: 3.5rem;
+        font-weight: 900;
+        line-height: 1.1;
+        margin-bottom: 2.5rem;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      }
+      .hero-video .title-line {
+        display: block;
+        animation: slideInUp 0.8s ease-out both;
+      }
+      .hero-video .highlight {
+        color: var(--primary-color);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      }
+      .hero-actions {
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        animation: fadeInUp 1s ease-out 0.8s both;
+      }
+      .hero-cta {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--primary-light)
+        );
+        color: var(--forest-primary);
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .btn-call {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        color: white;
+        padding: 1rem 1.8rem;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      /* Critical Animations */
+      @keyframes fadeInDown {
+        0% {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes slideInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Critical Mobile Styles */
+      @media (max-width: 968px) {
+        .hamburger {
+          display: flex;
+        }
+        .nav-menu {
+          position: fixed;
+          top: 100%;
+          left: -100%;
+          width: 100%;
+          height: calc(100vh - 100%);
+          background: var(--charcoal-primary);
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: center;
+          padding: 2rem 0;
+          transition: var(--transition-normal);
+        }
+        .nav-menu.active {
+          left: 0;
+        }
+        .company-name {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+          width: auto;
+          z-index: 1;
+          white-space: nowrap;
+        }
+      }
+      @media (min-width: 969px) {
+        .logo {
+          gap: 1rem;
+          flex-shrink: 0;
+        }
+        .company-name {
+          position: static;
+          transform: none;
+          text-align: left;
+        }
+      }
+      @media (max-width: 768px) {
+        .hero-content-overlay {
+          padding: 0 1.25rem;
+          max-width: 100%;
+          border-radius: 0;
+          backdrop-filter: none;
+          background: transparent;
+          justify-content: flex-start;
+          padding-top: calc(12vh + 110px);
+        }
+        .hero-video .hero-title {
+          font-size: 2.3rem;
+          margin-bottom: 0.75rem;
+          line-height: 1.05;
+        }
+        .hero-brand .company-name h1 {
+          font-size: 2rem;
+        }
+        .hero-brand .company-name span {
+          font-size: 1rem;
+        }
+        .hero-video .hero-actions {
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+        .hero-video .hero-cta,
+        .hero-video .btn-call {
+          width: 100%;
+          max-width: 280px;
+          justify-content: center;
+          height: 52px;
+          padding: 0 0.9rem;
+          box-sizing: border-box;
+          border-radius: 50px;
+          white-space: nowrap;
+        }
+      }
+      @media (max-width: 480px) {
+        .hero-video .hero-title {
+          font-size: 2.2rem;
+        }
+        .hero-brand .company-name h1 {
+          font-size: 1.8rem;
+        }
+        .hero-video .hero-cta,
+        .hero-video .btn-call {
+          max-width: 260px;
+        }
+      }
+    </style>
+
+    <!-- Preload critical fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Preload critical images for instant loading -->
     <link
@@ -35,50 +496,39 @@
     />
     <link
       rel="preload"
-      href="images/hero-bg.jpg"
-      as="image"
+      href="videos/test.mp4"
+      as="video"
       fetchpriority="high"
     />
-    <link
-      rel="preload"
-      href="images/gallery/Interior Painting.jpg"
-      as="image"
-    />
-    <link
-      rel="preload"
-      href="images/gallery/Exterior Painting.jpg"
-      as="image"
-    />
-    <link rel="preload" href="images/gallery/Commercial.jpg" as="image" />
-    <link
-      rel="preload"
-      href="images/gallery/Decorative Finishes.jpg"
-      as="image"
-    />
-    <link
-      rel="preload"
-      href="images/gallery/Concrete Coatings.png"
-      as="image"
-    />
-    <link
-      rel="preload"
-      href="images/gallery/Deck & Fence Restoration.png"
-      as="image"
-    />
-    <link rel="preload" href="Featured Projects/MAIN.jpg" as="image" />
-    <link rel="preload" href="Featured Projects/2.jpg" as="image" />
-    <link rel="preload" href="Featured Projects/3.jpg" as="image" />
 
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/responsive.css" />
+    <!-- Load non-critical CSS asynchronously -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="css/style.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript><link rel="stylesheet" href="css/style.css" /></noscript>
     <link
-      rel="stylesheet"
+      rel="preload"
+      href="css/responsive.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="css/responsive.css" /></noscript>
+
+    <!-- Load Font Awesome asynchronously -->
+    <link
+      rel="preload"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    /></noscript>
   </head>
   <body class="homepage">
     <!-- Header -->
@@ -711,13 +1161,30 @@
       </button>
     </div>
 
+    <!-- Mobile menu functionality handled by main.js -->
+
+    <!-- Load critical optimizers first for immediate impact -->
+    <script src="js/resource-prioritizer.js"></script>
+    <script src="js/image-optimizer.js"></script>
+    <script src="js/performance-monitor.js"></script>
+
+    <!-- Load performance boosters immediately for maximum impact -->
+    <script src="js/boost-performance.js" defer></script>
+    <script src="js/boost-performance-2.js" defer></script>
+    <script src="js/boost-performance-3.js" defer></script>
+    <script src="js/boost-performance-4.js" defer></script>
+
+    <!-- Load CSS optimizer for runtime optimization -->
+    <script src="js/css-optimizer.js" defer></script>
+
+    <!-- Performance validation (only in development) -->
+    <script src="js/performance-validator.js" defer></script>
+
+    <!-- Load main.js immediately for mobile menu functionality -->
     <script src="js/main.js"></script>
-    <script src="js/mobile-layout.js"></script>
-    <script src="js/lightbox.js"></script>
-    <!-- Backend-only booster: zero visual impact -->
-    <script src="js/boost-performance.js"></script>
-    <script src="js/boost-performance-2.js"></script>
-    <script src="js/boost-performance-3.js"></script>
-    <script src="js/boost-performance-4.js"></script>
+
+    <!-- Defer non-critical scripts -->
+    <script src="js/mobile-layout.js" defer></script>
+    <script src="js/lightbox.js" defer></script>
   </body>
 </html>
