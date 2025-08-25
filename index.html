@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Mobile browser UI color: match header color -->
+    <meta
+      name="theme-color"
+      content="#3a3a3a"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#1a1a1a"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta name="msapplication-navbutton-color" content="#3a3a3a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>Cocky's Painting & Decorating - Premium Painting Services</title>
+    <meta
+      name="description"
+      content="Professional painting and decorating services. Interior, exterior, commercial, roof restoration, and special effects. Premium quality guaranteed."
+    />
+    <!-- Preload critical CSS to speed up render without changing visuals -->
+    <link rel="preload" href="/css/style.css" as="style" />
+    <link rel="preload" href="/css/responsive.css" as="style" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body class="homepage">
+    <!-- Header -->
+    <header class="header">
+      <nav class="navbar">
+        <div class="nav-container">
+          <a href="index.html" class="logo">
+            <img
+              src="images/Updated.png"
+              alt="Cocky's Painting & Decorating Logo"
+              class="logo-img"
+            />
+            <div class="company-name">
+              <h1>COCKY'S</h1>
+              <span>PAINTING & DECORATING</span>
+            </div>
+          </a>
+          <div class="nav-right">
+            <ul class="nav-menu">
+              <li><a href="index.html" class="nav-link active">Home</a></li>
+              <li><a href="about.html" class="nav-link">About</a></li>
+              <li><a href="services.html" class="nav-link">Services</a></li>
+              <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+              <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="contact-info">
+              <a href="tel:0434433226" class="phone-btn">
+                <i class="fas fa-phone"></i>
+                0434 433 226
+              </a>
+            </div>
+          </div>
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section with Video Background -->
+    <section class="hero-video">
+      <!-- Video Background -->
+      <div class="video-background">
+        <video autoplay muted loop playsinline>
+          <source src="All Videos/FIXED.mov" type="video/mp4" />
+          <!-- Fallback background if video fails to load -->
+        </video>
+        <div class="video-overlay"></div>
+      </div>
+
+      <!-- Hero Content Overlay -->
+      <div class="hero-content-overlay">
+        <div class="hero-main-content">
+          <h2 class="hero-title">
+            <span class="title-line">Transform Your Space</span>
+            <span class="title-line">With</span>
+            <span class="title-line">Expert</span>
+            <span class="title-line highlight">Craftsmanship</span>
+          </h2>
+
+          <div class="hero-actions">
+            <a href="contact.html" class="btn btn-primary hero-cta">
+              <span>Get Free Quote</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="tel:0434433226" class="btn btn-call">
+              <i class="fas fa-phone"></i>
+              <span>0434 433 226</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-scroll">
+          <div class="scroll-indicator" onclick="scrollToNextSection()">
+            <div class="scroll-arrow">
+              <i class="fas fa-chevron-down"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Company Overview Section (moved from hero) -->
+    <section class="company-overview">
+      <div class="container">
+        <div class="overview-content">
+          <div class="overview-badge" id="premium-quality">
+            <i class="fas fa-award"></i>
+            <span>Premium Quality Guaranteed</span>
+          </div>
+
+          <p class="overview-description">
+            From stunning interiors to impressive commercial projects, we bring
+            your vision to life with unmatched quality and attention to detail.
+          </p>
+
+          <!-- Enhanced Project Gallery -->
+          <div
+            class="project-gallery"
+            role="img"
+            aria-label="Featured project preview"
+          >
+            <!-- Subtle Paint Accents -->
+            <div class="paint-accent top-left">
+              <div class="paint-dot dot-gold"></div>
+              <div class="paint-dot dot-terracotta"></div>
+            </div>
+            <div class="paint-accent bottom-right">
+              <div class="paint-stroke stroke-sage"></div>
+              <div class="paint-stroke stroke-forest"></div>
+            </div>
+
+            <!-- Gallery content (single outer frame only) -->
+            <div class="frame-content">
+              <div
+                class="gallery-preview-image"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  overflow: hidden;
+                  box-shadow: 0 8px 25px rgba(44, 62, 45, 0.2);
+                  position: relative;
+                "
+              >
+                <img
+                  src="Featured Projects/MAIN.jpg"
+                  alt="Featured Project Preview"
+                  style="
+                    width: 100%;
+                    height: 100%;
+                    object-fit: fill;
+                    cursor: pointer;
+                  "
+                  onclick="openLightbox(0)"
+                />
+                <!-- Text overlay -->
+                <div
+                  style="
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background: linear-gradient(
+                      transparent,
+                      rgba(0, 0, 0, 0.7)
+                    );
+                    color: white;
+                    padding: 2rem 1.5rem 1.5rem;
+                    text-align: center;
+                  "
+                >
+                  <h3
+                    class="gallery-title"
+                    style="color: white; margin: 0 0 0.5rem 0"
+                  >
+                    Featured Project
+                  </h3>
+                  <p
+                    class="gallery-description"
+                    style="color: rgba(255, 255, 255, 0.9); margin: 0"
+                  >
+                    Professional painting & decorating showcase
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Tool Icons -->
+            <div class="tool-icon brush-icon">
+              <i class="fas fa-paint-brush" aria-hidden="true"></i>
+            </div>
+            <div class="tool-icon roller-icon">
+              <i class="fas fa-paint-roller" aria-hidden="true"></i>
+            </div>
+          </div>
+
+          <div class="overview-stats">
+            <div class="stat-item">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Satisfaction Rate</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section id="services" class="services-premium">
+      <div class="services-background">
+        <div class="services-pattern"></div>
+      </div>
+
+      <div class="container">
+        <div class="services-header">
+          <div class="services-badge">
+            <i class="fas fa-paint-brush"></i>
+            <span>Our Services</span>
+          </div>
+          <h2>Premium Painting & Decorating Solutions</h2>
+          <p>
+            Comprehensive services designed to transform your space with expert
+            craftsmanship and attention to detail
+          </p>
+        </div>
+
+        <div class="services-showcase">
+          <div class="service-premium-card">
+            <div class="service-premium-icon">
+              <i class="fas fa-home"></i>
+            </div>
+            <div class="service-premium-content">
+              <h3>Interior Painting</h3>
+              <p>
+                Transform your living spaces with premium interior painting
+                services and expert color consultation.
+              </p>
+              <div class="service-premium-actions">
+                <a href="contact.html" class="btn-service-primary">
+                  <i class="fas fa-file-alt"></i>
+                  Get Quote
+                </a>
+                <a href="tel:0434433226" class="btn-service-call">
+                  <i class="fas fa-phone"></i>
+                  Call Now
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="service-premium-card">
+            <div class="service-premium-icon">
+              <i class="fas fa-building"></i>
+            </div>
+            <div class="service-premium-content">
+              <h3>Exterior Painting</h3>
+              <p>
+                Professional exterior painting services that enhance curb appeal
+                and provide long-lasting protection against the elements.
+              </p>
+              <div class="service-premium-actions">
+                <a href="contact.html" class="btn-service-primary">
+                  <i class="fas fa-file-alt"></i>
+                  Get Quote
+                </a>
+                <a href="tel:0434433226" class="btn-service-call">
+                  <i class="fas fa-phone"></i>
+                  Call Now
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="service-premium-card">
+            <div class="service-premium-icon">
+              <i class="fas fa-hammer"></i>
+            </div>
+            <div class="service-premium-content">
+              <h3>Commercial</h3>
+              <p>
+                Professional commercial painting for offices, retail spaces, and
+                industrial facilities with minimal disruption.
+              </p>
+              <div class="service-premium-actions">
+                <a href="contact.html" class="btn-service-primary">
+                  <i class="fas fa-file-alt"></i>
+                  Get Quote
+                </a>
+                <a href="tel:0434433226" class="btn-service-call">
+                  <i class="fas fa-phone"></i>
+                  Call Now
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="service-premium-card">
+            <div class="service-premium-icon">
+              <i class="fas fa-tools"></i>
+            </div>
+            <div class="service-premium-content">
+              <h3>Decorative Finishes</h3>
+              <p>
+                Beautiful decorative finishes and special effects that create
+                stunning visual impact and artistic flair.
+              </p>
+              <div class="service-premium-actions">
+                <a href="contact.html" class="btn-service-primary">
+                  <i class="fas fa-file-alt"></i>
+                  Get Quote
+                </a>
+                <a href="tel:0434433226" class="btn-service-call">
+                  <i class="fas fa-phone"></i>
+                  Call Now
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="service-premium-card">
+            <div class="service-premium-icon">
+              <i class="fas fa-palette"></i>
+            </div>
+            <div class="service-premium-content">
+              <h3>Concrete Coatings</h3>
+              <p>
+                Professional concrete coating and sealing services that provide
+                durable protection and enhanced appearance.
+              </p>
+              <div class="service-premium-actions">
+                <a href="contact.html" class="btn-service-primary">
+                  <i class="fas fa-file-alt"></i>
+                  Get Quote
+                </a>
+                <a href="tel:0434433226" class="btn-service-call">
+                  <i class="fas fa-phone"></i>
+                  Call Now
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="service-premium-card">
+            <div class="service-premium-icon">
+              <i class="fas fa-scroll"></i>
+            </div>
+            <div class="service-premium-content">
+              <h3>Deck & Fence Restoration</h3>
+              <p>
+                Protective and beautiful outdoor wood restoration services that
+                extend the life of your decks and fences.
+              </p>
+              <div class="service-premium-actions">
+                <a href="contact.html" class="btn-service-primary">
+                  <i class="fas fa-file-alt"></i>
+                  Get Quote
+                </a>
+                <a href="tel:0434433226" class="btn-service-call">
+                  <i class="fas fa-phone"></i>
+                  Call Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-us">
+      <div class="container">
+        <div class="content-split">
+          <div class="content-left">
+            <h2>Why Choose Cocky's Painting?</h2>
+            <div class="features">
+              <div class="feature">
+                <i class="fas fa-award"></i>
+                <h4>Premium Quality</h4>
+                <p>
+                  We use only the finest materials and proven techniques for
+                  lasting results.
+                </p>
+              </div>
+              <div class="feature">
+                <i class="fas fa-clock"></i>
+                <h4>Timely Completion</h4>
+                <p>
+                  Projects completed on schedule without compromising quality.
+                </p>
+              </div>
+              <div class="feature">
+                <i class="fas fa-shield-alt"></i>
+                <h4>Fully Insured</h4>
+                <p>Complete insurance coverage for your peace of mind.</p>
+              </div>
+              <div class="feature">
+                <i class="fas fa-handshake"></i>
+                <h4>Satisfaction Guaranteed</h4>
+                <p>Your complete satisfaction is our commitment to you.</p>
+              </div>
+            </div>
+          </div>
+          <div class="content-right">
+            <div class="stats-card">
+              <img
+                src="images/Why Choose Cocky's Painting.jpg"
+                alt="Why Choose Cocky's Painting"
+                class="stats-card-image"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customer Testimonials Section -->
+    <section class="testimonials-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>What Our Customers Say</h2>
+          <p>
+            Don't just take our word for it - hear from our satisfied customers
+            who trusted us with their painting projects.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <blockquote>
+                "Absolutely fantastic work! The team was professional, punctual,
+                and the quality exceeded our expectations. Our living room looks
+                brand new and the attention to detail was incredible."
+              </blockquote>
+              <div class="testimonial-author">
+                <div class="author-info">
+                  <h4>Sarah Mitchell</h4>
+                  <span>Interior Painting Project</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card featured">
+            <div class="testimonial-content">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <blockquote>
+                "From quote to completion, everything was seamless. Fair
+                pricing, excellent communication, and the exterior of our home
+                has never looked better. Highly recommend!"
+              </blockquote>
+              <div class="testimonial-author">
+                <div class="author-info">
+                  <h4>Michael Thompson</h4>
+                  <span>Exterior Painting</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <blockquote>
+                "Clean, professional, and reliable. They protected all our
+                furniture and left everything spotless. The color consultation
+                was incredibly helpful too!"
+              </blockquote>
+              <div class="testimonial-author">
+                <div class="author-info">
+                  <h4>Jennifer Adams</h4>
+                  <span>Commercial</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Ready to Transform Your Space?</h2>
+          <p>
+            Contact us today for a free consultation and quote. Let's bring your
+            vision to life.
+          </p>
+          <div class="cta-buttons">
+            <a href="tel:0434433226" class="btn btn-primary">
+              <i class="fas fa-phone"></i>
+              Call Now: 0434 433 226
+            </a>
+            <a href="contact.html" class="btn btn-secondary">Get Free Quote</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-logo">
+              <img
+                src="images/Updated.png"
+                alt="Cocky's Painting & Decorating"
+              />
+              <h3>COCKY'S PAINTING & DECORATING</h3>
+            </div>
+            <p>
+              Premium painting and decorating services with uncompromising
+              quality and professional excellence.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h4>Contact Info</h4>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <span>0434 433 226</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <span>cockyspainting@gmail.com</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-id-card"></i>
+              <span>ABN: 51 500 448 995</span>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h4>Services</h4>
+            <ul>
+              <li>
+                <a href="services.html#interior-painting">Interior Painting</a>
+              </li>
+              <li>
+                <a href="services.html#exterior-painting">Exterior Painting</a>
+              </li>
+              <li><a href="services.html#commercial">Commercial</a></li>
+              <li>
+                <a href="services.html#decorative-finishes"
+                  >Decorative Finishes</a
+                >
+              </li>
+              <li>
+                <a href="services.html#concrete-coatings">Concrete Coatings</a>
+              </li>
+              <li>
+                <a href="services.html#deck-fence-restoration"
+                  >Deck & Fence Restoration</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Cocky's Painting & Decorating. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox-overlay">
+      <div class="lightbox-container">
+        <button
+          class="lightbox-nav lightbox-prev"
+          onclick="previousImage()"
+          aria-label="Previous image"
+        >
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button
+          class="lightbox-nav lightbox-next"
+          onclick="nextImage()"
+          aria-label="Next image"
+        >
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="lightbox-content">
+          <img id="lightbox-image" src="" alt="Gallery Image" />
+          <button
+            class="lightbox-close"
+            onclick="closeLightbox()"
+            aria-label="Close lightbox"
+            style="position: absolute; top: 8px; right: 8px"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+          <div class="lightbox-caption">
+            <h3 id="lightbox-title"></h3>
+            <p id="lightbox-description"></p>
+          </div>
+        </div>
+      </div>
+      <button
+        class="lightbox-close"
+        onclick="closeLightbox()"
+        aria-label="Close lightbox"
+        style="position: absolute; top: 8px; right: 8px"
+      >
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/mobile-layout.js"></script>
+    <script src="js/lightbox.js"></script>
+    <!-- Backend-only booster: zero visual impact -->
+    <script src="js/boost-performance.js"></script>
+    <script src="js/boost-performance-2.js"></script>
+    <script src="js/boost-performance-3.js"></script>
+    <script src="js/boost-performance-4.js"></script>
+  </body>
+</html>

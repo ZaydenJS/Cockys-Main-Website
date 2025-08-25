@@ -1,0 +1,30 @@
+Video Placeholder Instructions
+=============================
+
+CURRENT SETUP: Using "test.mp4" as the hero video
+
+To complete your video hero setup:
+
+1. Your test video "test.mp4" is currently being used for the hero background
+
+2. Video specifications for best results:
+   - Format: MP4 (H.264 codec recommended)
+   - Duration: ~60 seconds (as mentioned)
+   - Resolution: 1920x1080 or higher
+   - Aspect ratio: 16:9
+   - File size: Keep under 50MB for good loading performance
+
+3. Video content tips:
+   - Ensure good lighting throughout the video
+   - Include variety of shots (wide, close-up, detail work)
+   - Show the transformation/before-after if possible
+   - Keep camera steady or use smooth movements
+
+4. To replace with your final video:
+   - Replace "test.mp4" with your premium project showcase video
+   - Keep the filename as "test.mp4" or update the HTML if you want a different name
+   - The video will automatically loop and be muted
+
+5. Fallback: If no video is available, the hero will show a gradient background
+
+The video hero is now ready and will use your "test.mp4" video!

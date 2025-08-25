@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Mobile browser UI color: match header color -->
+    <meta
+      name="theme-color"
+      content="#3a3a3a"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#1a1a1a"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta name="msapplication-navbutton-color" content="#3a3a3a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>About Us - Cocky's Painting & Decorating</title>
+    <meta
+      name="description"
+      content="Learn about Cocky's Painting & Decorating - our story, values, and commitment to premium painting services."
+    />
+    <!-- Preload critical CSS -->
+    <link rel="preload" href="/css/style.css" as="style" />
+    <link rel="preload" href="/css/responsive.css" as="style" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="navbar">
+        <div class="nav-container">
+          <a href="index.html" class="logo">
+            <img
+              src="images/Updated.png"
+              alt="Cocky's Painting & Decorating Logo"
+              class="logo-img"
+            />
+            <div class="company-name">
+              <h1>COCKY'S</h1>
+              <span>PAINTING & DECORATING</span>
+            </div>
+          </a>
+          <div class="nav-right">
+            <ul class="nav-menu">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="about.html" class="nav-link active">About</a></li>
+              <li><a href="services.html" class="nav-link">Services</a></li>
+              <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+              <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="contact-info">
+              <a href="tel:0434433226" class="phone-btn">
+                <i class="fas fa-phone"></i>
+                0434 433 226
+              </a>
+            </div>
+          </div>
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Team Section -->
+    <section class="team-section">
+      <div class="container">
+        <div class="team-hero">
+          <div class="team-content">
+            <div class="team-badge">
+              <i class="fas fa-paint-brush"></i>
+              <span>Master Craftsman</span>
+            </div>
+            <h2>Meet Joel Alock</h2>
+            <p class="team-subtitle">Founder & Lead Painter</p>
+            <p class="team-description">
+              With 4 years of dedicated experience in the painting industry,
+              Joel has built Cocky's Painting & Decorating on the foundation of
+              quality craftsmanship and customer satisfaction. His passion for
+              transforming spaces and attention to detail ensures every project
+              exceeds expectations.
+            </p>
+          </div>
+
+          <div class="team-visual">
+            <div class="team-image-container">
+              <div class="team-image">
+                <img
+                  src="Featured Projects/MAIN.jpg"
+                  alt="Cocky's Painting & Decorating - Professional Team Member"
+                  style="
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 30px;
+                  "
+                />
+              </div>
+              <div class="floating-elements">
+                <div class="floating-icon paint">
+                  <i class="fas fa-paint-roller"></i>
+                </div>
+                <div class="floating-icon brush">
+                  <i class="fas fa-paint-brush"></i>
+                </div>
+                <div class="floating-icon palette">
+                  <i class="fas fa-palette"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-credentials">
+            <div class="credential">
+              <i class="fas fa-certificate"></i>
+              <span>Licensed & Insured</span>
+            </div>
+            <div class="credential">
+              <i class="fas fa-award"></i>
+              <span>Quality Guarantee</span>
+            </div>
+            <div class="credential">
+              <i class="fas fa-handshake"></i>
+              <span>Customer Focused</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Premium About Us Section -->
+    <section class="premium-about-section">
+      <div class="about-background">
+        <div class="about-pattern"></div>
+        <div class="paint-drops">
+          <div class="drop drop-1"></div>
+          <div class="drop drop-2"></div>
+          <div class="drop drop-3"></div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="premium-about-content">
+          <div class="about-header">
+            <div class="about-badge">
+              <div class="badge-glow"></div>
+              <div class="badge-content">
+                <i class="fas fa-paint-brush"></i>
+                <span>Premium Craftsmanship</span>
+              </div>
+            </div>
+
+            <h2 class="about-title">
+              <span class="title-line-1">About</span>
+              <span class="title-line-2">Cocky's Painting & Decorating</span>
+            </h2>
+
+            <p class="about-intro">
+              We're a local painting business dedicated to transforming your
+              space with quality craftsmanship and professional service that
+              exceeds expectations.
+            </p>
+          </div>
+
+          <div class="about-highlights-grid">
+            <div class="about-highlight-card">
+              <div class="highlight-icon">
+                <i class="fas fa-award"></i>
+              </div>
+              <div class="highlight-content">
+                <h3>Quality Excellence</h3>
+                <p>
+                  Founded on the principles of quality workmanship and customer
+                  satisfaction, bringing years of experience to every project.
+                </p>
+              </div>
+            </div>
+
+            <div class="about-highlight-card">
+              <div class="highlight-icon">
+                <i class="fas fa-home"></i>
+              </div>
+              <div class="highlight-content">
+                <h3>Complete Solutions</h3>
+                <p>
+                  From refreshing home interiors to protecting exteriors and
+                  tackling commercial projects with the same commitment to
+                  excellence.
+                </p>
+              </div>
+            </div>
+
+            <div class="about-highlight-card">
+              <div class="highlight-icon">
+                <i class="fas fa-heart"></i>
+              </div>
+              <div class="highlight-content">
+                <h3>Personal Investment</h3>
+                <p>
+                  We understand your property is more than walls – it's your
+                  investment, comfort, and pride. We deliver results that exceed
+                  expectations.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-cta">
+            <div class="cta-content">
+              <h3>Ready to Transform Your Space?</h3>
+              <p>
+                Experience the difference that passion, expertise, and attention
+                to detail can make.
+              </p>
+              <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-primary">
+                  <i class="fas fa-file-alt"></i>
+                  Get Your Free Quote
+                </a>
+                <a href="tel:0434433226" class="btn btn-secondary">
+                  <i class="fas fa-phone"></i>
+                  Call Now: 0434 433 226
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Process Section -->
+    <section class="process-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Professional Process</h2>
+          <p>A systematic approach ensuring exceptional results every time</p>
+        </div>
+        <div class="process-flow">
+          <div class="process-step">
+            <div class="step-number-badge">1</div>
+            <div class="step-icon-circle">
+              <i class="fas fa-comments"></i>
+            </div>
+            <div class="step-content">
+              <h3>Consultation & Quote</h3>
+              <p>
+                We discuss your vision, assess project scope, and provide a
+                detailed, transparent quote.
+              </p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-number-badge">2</div>
+            <div class="step-icon-circle">
+              <i class="fas fa-palette"></i>
+            </div>
+            <div class="step-content">
+              <h3>Color & Planning</h3>
+              <p>
+                Expert color consultation and detailed project planning to
+                ensure your vision comes to life perfectly.
+              </p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-number-badge">3</div>
+            <div class="step-icon-circle">
+              <i class="fas fa-tools"></i>
+            </div>
+            <div class="step-content">
+              <h3>Preparation</h3>
+              <p>
+                Thorough surface preparation, furniture protection, and ensuring
+                a clean work environment.
+              </p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-number-badge">4</div>
+            <div class="step-icon-circle">
+              <i class="fas fa-paint-roller"></i>
+            </div>
+            <div class="step-content">
+              <h3>Expert Application</h3>
+              <p>
+                Professional painting using premium materials and proven
+                techniques for a flawless finish.
+              </p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-number-badge">5</div>
+            <div class="step-icon-circle">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="step-content">
+              <h3>Quality Inspection</h3>
+              <p>
+                Comprehensive quality check and final walkthrough to ensure
+                every detail meets our standards.
+              </p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-number-badge">6</div>
+            <div class="step-icon-circle">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <div class="step-content">
+              <h3>Final Handover</h3>
+              <p>
+                Complete cleanup, final inspection with you, and ongoing support
+                for your satisfaction.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Areas Section -->
+    <section class="service-areas-section">
+      <div class="container">
+        <div class="areas-content">
+          <div class="areas-text">
+            <h2>Serving the Illawarra & South Coast</h2>
+            <p class="areas-intro">
+              As a proud local business, we provide premium painting and
+              decorating services throughout the beautiful Illawarra region and
+              South Coast communities.
+            </p>
+            <div class="areas-features">
+              <div class="area-feature">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="feature-text">
+                  <h4>Regional Expertise</h4>
+                  <p>
+                    Extensive knowledge of Illawarra's coastal climate and
+                    diverse architectural styles from heritage homes to modern
+                    developments
+                  </p>
+                </div>
+              </div>
+              <div class="area-feature">
+                <i class="fas fa-route"></i>
+                <div class="feature-text">
+                  <h4>Wide Coverage Area</h4>
+                  <p>
+                    Servicing from Wollongong to Nowra, including all coastal
+                    towns and inland communities throughout the region
+                  </p>
+                </div>
+              </div>
+              <div class="area-feature">
+                <i class="fas fa-heart"></i>
+                <div class="feature-text">
+                  <h4>Local Community Pride</h4>
+                  <p>
+                    Committed to enhancing the beauty of our region, one quality
+                    paint job at a time
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="contact-cta">
+              <p>
+                <strong>Ready to get started?</strong> Contact us today to
+                discuss your project!
+              </p>
+              <a href="contact.html" class="btn btn-primary"
+                >Get Your Free Quote</a
+              >
+            </div>
+          </div>
+          <div class="areas-visual">
+            <div class="areas-map-container">
+              <div id="interactive-map" class="interactive-map"></div>
+              <div class="service-radius">
+                <i class="fas fa-map-marked-alt"></i>
+                <span
+                  >Covering the entire Illawarra region from Wollongong to Nowra
+                  and surrounding areas</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="certifications-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Trusted & Certified</h2>
+          <p>Professional credentials for complete peace of mind</p>
+        </div>
+        <div class="certifications-showcase">
+          <div class="cert-card featured">
+            <div class="cert-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Fully Licensed & Insured</h3>
+            <p>
+              Complete protection with comprehensive liability and workers'
+              compensation coverage
+            </p>
+            <div class="cert-badge">Verified</div>
+          </div>
+          <div class="cert-card featured">
+            <div class="cert-icon">
+              <i class="fas fa-certificate"></i>
+            </div>
+            <h3>Professional Certified</h3>
+            <p>Ongoing training in latest techniques and safety standards</p>
+            <div class="cert-badge">Verified</div>
+          </div>
+          <div class="cert-card featured">
+            <div class="cert-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h3>Eco-Friendly Practices</h3>
+            <p>Committed to environmentally responsible painting solutions</p>
+            <div class="cert-badge">Verified</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Ready to Work With Us?</h2>
+          <p>
+            Experience the difference that passion, expertise, and attention to
+            detail can make for your next project.
+          </p>
+          <div class="cta-buttons">
+            <a href="tel:0434433226" class="btn btn-primary">
+              <i class="fas fa-phone"></i>
+              Call Now: 0434 433 226
+            </a>
+            <a href="contact.html" class="btn btn-secondary">Get Your Quote</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-logo">
+              <img
+                src="images/Updated.png"
+                alt="Cocky's Painting & Decorating"
+              />
+              <h3>COCKY'S PAINTING & DECORATING</h3>
+            </div>
+            <p>
+              Premium painting and decorating services with uncompromising
+              quality and professional excellence.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h4>Contact Info</h4>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <span>0434 433 226</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <span>cockyspainting@gmail.com</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-id-card"></i>
+              <span>ABN: 51 500 448 995</span>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h4>Services</h4>
+            <ul>
+              <li>
+                <a href="services.html#interior-painting">Interior Painting</a>
+              </li>
+              <li>
+                <a href="services.html#exterior-painting">Exterior Painting</a>
+              </li>
+              <li><a href="services.html#commercial">Commercial</a></li>
+              <li>
+                <a href="services.html#decorative-finishes"
+                  >Decorative Finishes</a
+                >
+              </li>
+              <li>
+                <a href="services.html#concrete-coatings">Concrete Coatings</a>
+              </li>
+              <li>
+                <a href="services.html#deck-fence-restoration"
+                  >Deck & Fence Restoration</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Cocky's Painting & Decorating. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+    <script src="js/mobile-layout.js"></script>
+
+    <!-- Leaflet JavaScript -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+
+    <!-- Interactive Map Script -->
+    <script>
+      // Initialize the map when the page loads
+      document.addEventListener("DOMContentLoaded", function () {
+        // Create map centered on Wollongong
+        var map = L.map("interactive-map").setView([-34.4278, 150.8931], 10);
+
+        // Add OpenStreetMap tiles
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution: "© OpenStreetMap contributors",
+          maxZoom: 18,
+        }).addTo(map);
+
+        // Define service area coordinates (Illawarra region)
+        var serviceAreaCoords = [
+          [-34.25, 150.75], // North of Wollongong
+          [-34.3, 150.95], // Northeast
+          [-34.45, 150.98], // Wollongong area
+          [-34.55, 150.95], // Shellharbour area
+          [-34.68, 150.88], // Kiama area
+          [-34.88, 150.6], // Nowra area
+          [-34.9, 150.55], // Southwest
+          [-34.7, 150.4], // West
+          [-34.5, 150.5], // Northwest
+          [-34.35, 150.65], // Back to north
+          [-34.25, 150.75], // Close the polygon
+        ];
+
+        // Create service area polygon
+        var serviceArea = L.polygon(serviceAreaCoords, {
+          color: "#f2d293",
+          weight: 3,
+          opacity: 0.8,
+          fillColor: "#f2d293",
+          fillOpacity: 0.2,
+        }).addTo(map);
+
+        // Add markers for key locations
+        var locations = [
+          {
+            name: "Wollongong",
+            coords: [-34.4278, 150.8931],
+            description: "Major city - Full service coverage",
+          },
+          {
+            name: "Shellharbour",
+            coords: [-34.5833, 150.8667],
+            description: "Coastal area - Residential & commercial",
+          },
+          {
+            name: "Kiama",
+            coords: [-34.6833, 150.85],
+            description: "Historic coastal town",
+          },
+          {
+            name: "Nowra",
+            coords: [-34.8833, 150.6],
+            description: "South Coast hub",
+          },
+          {
+            name: "Port Kembla",
+            coords: [-34.4833, 150.9],
+            description: "Industrial & residential",
+          },
+        ];
+
+        // Custom icon for service locations
+        var serviceIcon = L.divIcon({
+          className: "custom-marker",
+          html: '<div class="marker-pin"><i class="fas fa-paint-brush"></i></div>',
+          iconSize: [30, 30],
+          iconAnchor: [15, 30],
+        });
+
+        // Add markers to map
+        locations.forEach(function (location) {
+          L.marker(location.coords, { icon: serviceIcon })
+            .addTo(map)
+            .bindPopup(
+              "<strong>" +
+                location.name +
+                "</strong><br>" +
+                location.description
+            );
+        });
+
+        // Fit map to service area bounds
+        map.fitBounds(serviceArea.getBounds(), { padding: [20, 20] });
+
+        // Add custom control for service info
+        var serviceInfo = L.control({ position: "topright" });
+        serviceInfo.onAdd = function (map) {
+          var div = L.DomUtil.create("div", "service-info-control");
+          div.innerHTML =
+            '<h4><i class="fas fa-map-marked-alt"></i> Service Area</h4>' +
+            "<p>Illawarra & South Coast Region</p>" +
+            "<small>Click markers for location details</small>";
+          return div;
+        };
+        serviceInfo.addTo(map);
+      });
+    </script>
+
+    <!-- Removed non-existent SEO scripts to avoid 404s and improve performance -->
+    <script src="js/boost-performance.js"></script>
+    <script src="js/boost-performance-2.js"></script>
+    <script src="js/boost-performance-3.js"></script>
+    <script src="js/boost-performance-4.js"></script>
+  </body>
+</html>
