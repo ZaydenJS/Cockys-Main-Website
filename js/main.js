@@ -108,6 +108,11 @@ function initializeGallery() {
   const lightboxPrev = document.getElementById("lightbox-prev");
   const lightboxNext = document.getElementById("lightbox-next");
 
+  // Exit early if lightbox elements don't exist on this page
+  if (!lightbox || !lightboxImg) {
+    return;
+  }
+
   let currentImageIndex = 0;
   let currentImages = [];
 

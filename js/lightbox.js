@@ -1,21 +1,57 @@
 // Lightbox Gallery Functionality
 // Gallery images data - All featured project images in numerical order
-const galleryImages = [
-  { src: "Featured Projects/MAIN.jpg" },
-  { src: "Featured Projects/2.jpg" },
-  { src: "Featured Projects/3.jpg" },
-  { src: "Featured Projects/4.jpg" },
-  { src: "Featured Projects/5.jpg" },
-  { src: "Featured Projects/6.jpg" },
-  { src: "Featured Projects/7.jpg" },
-  { src: "Featured Projects/8.jpg" },
-  { src: "Featured Projects/9.jpg" },
+const featuredProjectImages = [
+  {
+    src: "Featured Projects/MAIN.jpg",
+    title: "Featured Project 1",
+    description: "Professional painting project showcase",
+  },
+  {
+    src: "Featured Projects/2.jpg",
+    title: "Featured Project 2",
+    description: "Professional painting project showcase",
+  },
+  {
+    src: "Featured Projects/3.jpg",
+    title: "Featured Project 3",
+    description: "Professional painting project showcase",
+  },
+  {
+    src: "Featured Projects/4.jpg",
+    title: "Featured Project 4",
+    description: "Professional painting project showcase",
+  },
+  {
+    src: "Featured Projects/5.jpg",
+    title: "Featured Project 5",
+    description: "Professional painting project showcase",
+  },
+  {
+    src: "Featured Projects/6.jpg",
+    title: "Featured Project 6",
+    description: "Professional painting project showcase",
+  },
+  {
+    src: "Featured Projects/7.jpg",
+    title: "Featured Project 7",
+    description: "Professional painting project showcase",
+  },
+  {
+    src: "Featured Projects/8.jpg",
+    title: "Featured Project 8",
+    description: "Professional painting project showcase",
+  },
+  {
+    src: "Featured Projects/9.jpg",
+    title: "Featured Project 9",
+    description: "Professional painting project showcase",
+  },
 ];
 
 // Preload Featured Projects images for instant lightbox display
 (function preloadFeaturedProjectImages() {
   try {
-    galleryImages.forEach((item) => {
+    featuredProjectImages.forEach((item) => {
       const img = new Image();
       img.decoding = "async";
       img.loading = "eager";
@@ -35,7 +71,7 @@ function openLightbox(index) {
   const lightboxDescription = document.getElementById("lightbox-description");
 
   // Set image and content
-  const currentImage = galleryImages[currentImageIndex];
+  const currentImage = featuredProjectImages[currentImageIndex];
   lightboxImage.src = currentImage.src;
   lightboxImage.alt = currentImage.title;
   lightboxTitle.textContent = currentImage.title;
@@ -62,13 +98,14 @@ function closeLightbox() {
 // Navigate to previous image
 function previousImage() {
   currentImageIndex =
-    (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+    (currentImageIndex - 1 + featuredProjectImages.length) %
+    featuredProjectImages.length;
   updateLightboxContent();
 }
 
 // Navigate to next image
 function nextImage() {
-  currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+  currentImageIndex = (currentImageIndex + 1) % featuredProjectImages.length;
   updateLightboxContent();
 }
 
@@ -78,7 +115,7 @@ function updateLightboxContent() {
   const lightboxTitle = document.getElementById("lightbox-title");
   const lightboxDescription = document.getElementById("lightbox-description");
 
-  const currentImage = galleryImages[currentImageIndex];
+  const currentImage = featuredProjectImages[currentImageIndex];
 
   // Add fade effect
   lightboxImage.style.opacity = "0";

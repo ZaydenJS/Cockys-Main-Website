@@ -26,6 +26,49 @@
     <link rel="preload" href="/css/style.css" as="style" />
     <link rel="preload" href="/css/responsive.css" as="style" />
 
+    <!-- Preload critical images for instant loading -->
+    <link
+      rel="preload"
+      href="images/Updated.png"
+      as="image"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      href="images/hero-bg.jpg"
+      as="image"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      href="images/gallery/Interior Painting.jpg"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="images/gallery/Exterior Painting.jpg"
+      as="image"
+    />
+    <link rel="preload" href="images/gallery/Commercial.jpg" as="image" />
+    <link
+      rel="preload"
+      href="images/gallery/Decorative Finishes.jpg"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="images/gallery/Concrete Coatings.png"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="images/gallery/Deck & Fence Restoration.png"
+      as="image"
+    />
+    <link rel="preload" href="Featured Projects/MAIN.jpg" as="image" />
+    <link rel="preload" href="Featured Projects/2.jpg" as="image" />
+    <link rel="preload" href="Featured Projects/3.jpg" as="image" />
+
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
     <link
@@ -47,6 +90,9 @@
               src="images/Updated.png"
               alt="Cocky's Painting & Decorating Logo"
               class="logo-img"
+              loading="eager"
+              decoding="sync"
+              fetchpriority="high"
             />
             <div class="company-name">
               <h1>COCKY'S</h1>
@@ -165,6 +211,9 @@
                 <img
                   src="Featured Projects/MAIN.jpg"
                   alt="Featured Project Preview"
+                  loading="eager"
+                  decoding="sync"
+                  fetchpriority="high"
                   style="
                     width: 100%;
                     height: 100%;
@@ -425,6 +474,9 @@
                 src="images/Why Choose Cocky's Painting.jpg"
                 alt="Why Choose Cocky's Painting"
                 class="stats-card-image"
+                loading="eager"
+                decoding="sync"
+                fetchpriority="high"
               />
             </div>
           </div>
@@ -545,6 +597,8 @@
               <img
                 src="images/Updated.png"
                 alt="Cocky's Painting & Decorating"
+                loading="eager"
+                decoding="sync"
               />
               <h3>COCKY'S PAINTING & DECORATING</h3>
             </div>

@@ -39,6 +39,9 @@
       // 7.1) Refine image loading priorities (below-the-fold => lazy)
       this.refineImageLoading();
 
+      // 7.2) Instant image loading optimization
+      this.optimizeImageLoading();
+
       // 8) Cache warm-up of core assets
       this.warmCaches();
     },
@@ -342,6 +345,89 @@
         "js/gallery.js",
       ];
       coreAssets.forEach((u) => fetch(u, { mode: "no-cors" }).catch(() => {}));
+    },
+
+    // ------------------------------
+    // 7.2) Instant Image Loading Optimization
+    // ------------------------------
+    optimizeImageLoading() {
+      // Force decode all images immediately for instant display
+      document.querySelectorAll("img").forEach((img, index) => {
+        // Set highest priority for first 6 images
+        if (index < 6) {
+          img.setAttribute("fetchpriority", "high");
+          img.setAttribute("loading", "eager");
+        }
+
+        // Force immediate decode
+        img.setAttribute("decoding", "sync");
+
+        // If image has src, decode it immediately
+        if (img.src && img.complete) {
+          img.decode().catch(() => {});
+        } else if (img.src) {
+          img.addEventListener(
+            "load",
+            () => {
+              img.decode().catch(() => {});
+            },
+            { once: true }
+          );
+        }
+      });
+
+      // Preload all gallery and featured project images
+      const criticalImages = [
+        "images/Updated.png",
+        "images/hero-bg.jpg",
+        "images/gallery/Interior Painting.jpg",
+        "images/gallery/Exterior Painting.jpg",
+        "images/gallery/Commercial.jpg",
+        "images/gallery/Decorative Finishes.jpg",
+        "images/gallery/Concrete Coatings.png",
+        "images/gallery/Deck & Fence Restoration.png",
+        "Featured Projects/MAIN.jpg",
+        "Featured Projects/2.jpg",
+        "Featured Projects/3.jpg",
+        "Featured Projects/4.jpg",
+        "Featured Projects/5.jpg",
+        "Featured Projects/6.jpg",
+      ];
+
+      // Aggressively preload critical images
+      criticalImages.forEach((src, index) => {
+        const img = new Image();
+        img.decoding = "sync";
+        img.loading = index < 3 ? "eager" : "lazy";
+        if (index < 3) img.fetchPriority = "high";
+        img.src = src;
+
+        // Force decode when loaded
+        img.addEventListener(
+          "load",
+          () => {
+            img.decode().catch(() => {});
+          },
+          { once: true }
+        );
+      });
+
+      // Use requestIdleCallback to preload remaining images
+      const idle = window.requestIdleCallback || ((cb) => setTimeout(cb, 100));
+      idle(() => {
+        const remainingImages = [
+          "Featured Projects/7.jpg",
+          "Featured Projects/8.jpg",
+          "Featured Projects/9.jpg",
+        ];
+
+        remainingImages.forEach((src) => {
+          const img = new Image();
+          img.decoding = "async";
+          img.loading = "lazy";
+          img.src = src;
+        });
+      });
     },
   };
 

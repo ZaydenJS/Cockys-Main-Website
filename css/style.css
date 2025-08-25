@@ -3557,6 +3557,11 @@ body:not(.homepage) .services-premium {
   width: 20px;
 }
 
+.contact-item span {
+  color: #cccccc !important;
+  text-decoration: none !important;
+}
+
 .footer-bottom {
   border-top: 1px solid rgba(242, 210, 147, 0.3);
   padding-top: 2rem;
