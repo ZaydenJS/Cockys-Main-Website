@@ -36,6 +36,21 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
+
+    <!-- Fix footer text color on mobile -->
+    <style>
+      /* Override mobile browser auto-linking styles - ONLY in footer */
+      .footer .contact-item span,
+      .footer .contact-item a,
+      .footer a[href^="tel:"],
+      .footer a[href^="mailto:"] {
+        color: #cccccc !important;
+        text-decoration: none !important;
+        -webkit-text-decoration-color: #cccccc !important;
+        text-decoration-color: #cccccc !important;
+        -webkit-text-fill-color: #cccccc !important;
+      }
+    </style>
   </head>
   <body>
     <!-- Header -->
