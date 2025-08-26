@@ -519,11 +519,11 @@
         text-decoration: none !important;
       }
 
-      /* Override mobile browser auto-linking styles */
-      .contact-item span,
-      .contact-item a,
-      a[href^="tel:"],
-      a[href^="mailto:"] {
+      /* Override mobile browser auto-linking styles - ONLY in footer */
+      .footer .contact-item span,
+      .footer .contact-item a,
+      .footer a[href^="tel:"],
+      .footer a[href^="mailto:"] {
         color: #cccccc !important;
         text-decoration: none !important;
         -webkit-text-decoration-color: #cccccc !important;
