@@ -497,6 +497,39 @@
           max-width: 260px;
         }
       }
+
+      /* Critical Footer Styles - Fix mobile blue text issue */
+      .footer {
+        background: var(--charcoal-primary);
+        color: #ffffff;
+      }
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+        color: #cccccc;
+      }
+      .contact-item i {
+        color: var(--primary-color);
+        width: 20px;
+      }
+      .contact-item span {
+        color: #cccccc !important;
+        text-decoration: none !important;
+      }
+
+      /* Override mobile browser auto-linking styles */
+      .contact-item span,
+      .contact-item a,
+      a[href^="tel:"],
+      a[href^="mailto:"] {
+        color: #cccccc !important;
+        text-decoration: none !important;
+        -webkit-text-decoration-color: #cccccc !important;
+        text-decoration-color: #cccccc !important;
+        -webkit-text-fill-color: #cccccc !important;
+      }
     </style>
 
     <!-- Preload critical fonts -->
@@ -511,6 +544,18 @@
     <link
       rel="preload"
       href="images/Updated.png"
+      as="image"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      href="Featured Projects/MAIN.jpg"
+      as="image"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      href="images/Why Choose Cocky's Painting.jpg"
       as="image"
       fetchpriority="high"
     />
@@ -1185,7 +1230,8 @@
 
     <!-- Load critical optimizers first for immediate impact -->
     <script src="js/resource-prioritizer.js"></script>
-    <script src="js/image-optimizer.js"></script>
+    <!-- Temporarily disable image optimizer to fix loading issues -->
+    <!-- <script src="js/image-optimizer.js"></script> -->
     <script src="js/performance-monitor.js"></script>
 
     <!-- Load performance boosters immediately for maximum impact -->
