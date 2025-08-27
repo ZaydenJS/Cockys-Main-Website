@@ -81,15 +81,6 @@ function openLightbox(index) {
   lightbox.classList.add("active");
   document.body.style.overflow = "hidden"; // Prevent background scrolling
 
-  // Set CSS var with the width of the currently displayed image (desktop only)
-  if (window.innerWidth >= 769) {
-    const imgRect = lightboxImage.getBoundingClientRect();
-    document.documentElement.style.setProperty(
-      "--lb-width",
-      `${Math.round(imgRect.width)}px`
-    );
-  }
-
   // Add keyboard event listener
   document.addEventListener("keydown", handleKeyPress);
 }
@@ -102,11 +93,6 @@ function closeLightbox() {
 
   // Remove keyboard event listener
   document.removeEventListener("keydown", handleKeyPress);
-
-  // Clear CSS var when closing
-  if (window.innerWidth >= 769) {
-    document.documentElement.style.removeProperty("--lb-width");
-  }
 }
 
 // Navigate to previous image
@@ -172,6 +158,70 @@ document.addEventListener("DOMContentLoaded", function () {
   const lightboxImage = document.getElementById("lightbox-image");
   lightboxImage.style.transition = "opacity 0.3s ease";
 });
+
+// Desktop-only: keep nav arrows fixed at edges of the largest possible image
+(function setupFixedArrowPositions() {
+  function getMaxDisplayedWidthPx(imageSrcs) {
+    return new Promise((resolve) => {
+      let remaining = imageSrcs.length;
+      let maxAR = 0; // aspect ratio w/h
+      const finish = () => {
+        if (maxAR <= 0) maxAR = 16 / 9; // sensible fallback
+        const width = Math.min(
+          window.innerWidth * 0.8, // max-width: 80vw
+          window.innerHeight * 0.7 * maxAR // max-height: 70vh converted to width via AR
+        );
+        resolve(width);
+      };
+      const timeout = setTimeout(finish, 1000);
+      imageSrcs.forEach((src) => {
+        const img = new Image();
+        img.onload = () => {
+          const ar =
+            img.naturalWidth && img.naturalHeight
+              ? img.naturalWidth / img.naturalHeight
+              : 0;
+          if (ar > maxAR) maxAR = ar;
+          if (--remaining === 0) {
+            clearTimeout(timeout);
+            finish();
+          }
+        };
+        img.onerror = () => {
+          if (--remaining === 0) {
+            clearTimeout(timeout);
+            finish();
+          }
+        };
+        img.src = src;
+      });
+    });
+  }
+
+  async function positionArrows() {
+    if (window.innerWidth < 769) return; // PC only
+    const overlay = document.getElementById("lightbox");
+    if (!overlay) return;
+    const prev = overlay.querySelector(".lightbox-prev");
+    const next = overlay.querySelector(".lightbox-next");
+    if (!prev || !next) return;
+
+    const srcs = featuredProjectImages.map((i) => i.src);
+    const maxWidth = await getMaxDisplayedWidthPx(srcs);
+    const margin = Math.max((window.innerWidth - maxWidth) / 2, 12);
+    const arrowSize = 60; // matches CSS
+    const gap = 16;
+    const offset = Math.max(12, Math.round(margin - arrowSize - gap));
+
+    prev.style.left = offset + "px";
+    prev.style.right = "";
+    next.style.right = offset + "px";
+    next.style.left = "";
+  }
+
+  document.addEventListener("DOMContentLoaded", positionArrows);
+  window.addEventListener("resize", positionArrows);
+})();
 
 // Touch/swipe support for mobile
 let touchStartX = 0;

@@ -2553,7 +2553,7 @@ html {
     font-size: 1.1rem;
   }
 
-  .areas-features {
+  .mobile-features .areas-features {
     gap: 1.5rem;
     display: flex !important;
     flex-direction: column !important;
@@ -2626,7 +2626,7 @@ html {
     font-size: 1rem;
   }
 
-  .areas-features {
+  .mobile-features .areas-features {
     gap: 1.25rem !important;
   }
 

@@ -24,45 +24,19 @@ const galleryImages = [
   },
 ];
 
-// Preload Gallery images for instant lightbox display and cache natural sizes
-const galleryImageMeta = [];
+// Preload Gallery images for instant lightbox display
 (function preloadGalleryImages() {
   try {
-    galleryImages.forEach((item, idx) => {
+    galleryImages.forEach((item) => {
       const img = new Image();
       img.decoding = "async";
       img.loading = "eager";
       img.src = item.src;
-      img.addEventListener("load", () => {
-        galleryImageMeta[idx] = {
-          w: img.naturalWidth || 0,
-          h: img.naturalHeight || 0,
-        };
-      });
     });
   } catch (_) {}
 })();
 
 let currentGalleryImageIndex = 0;
-
-// Compute the largest possible displayed width across all images (desktop only)
-function computeLargestDisplayedWidth() {
-  const maxW = window.innerWidth * 0.8; // matches CSS max-width: 80vw
-  const maxH = window.innerHeight * 0.7; // matches CSS max-height: 70vh
-  let maxDisplayW = 0;
-
-  galleryImageMeta.forEach((meta) => {
-    if (!meta || !meta.w || !meta.h) return;
-    const aspect = meta.w / meta.h;
-    const widthLimitedByHeight = maxH * aspect;
-    const displayW = Math.min(maxW, widthLimitedByHeight);
-    if (displayW > maxDisplayW) maxDisplayW = displayW;
-  });
-
-  // Fallback if meta not ready yet
-  if (maxDisplayW === 0) return Math.round(maxW);
-  return Math.round(maxDisplayW);
-}
 
 // Initialize gallery lightbox functionality
 document.addEventListener("DOMContentLoaded", function () {
@@ -78,6 +52,71 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   });
+
+  // Desktop-only: keep nav arrows fixed at edges of the largest possible image
+  (function setupFixedArrowPositions() {
+    function getMaxDisplayedWidthPx(imageSrcs) {
+      return new Promise((resolve) => {
+        let remaining = imageSrcs.length;
+        let maxAR = 0; // aspect ratio w/h
+        const finish = () => {
+          if (maxAR <= 0) maxAR = 16 / 9; // sensible fallback
+          const width = Math.min(
+            window.innerWidth * 0.8, // max-width: 80vw
+            window.innerHeight * 0.7 * maxAR // max-height: 70vh converted to width via AR
+          );
+          resolve(width);
+        };
+        const timeout = setTimeout(finish, 1000);
+        imageSrcs.forEach((src) => {
+          const img = new Image();
+          img.onload = () => {
+            const ar =
+              img.naturalWidth && img.naturalHeight
+                ? img.naturalWidth / img.naturalHeight
+                : 0;
+            if (ar > maxAR) maxAR = ar;
+            if (--remaining === 0) {
+              clearTimeout(timeout);
+              finish();
+            }
+          };
+          img.onerror = () => {
+            if (--remaining === 0) {
+              clearTimeout(timeout);
+              finish();
+            }
+          };
+          img.src = src;
+        });
+      });
+    }
+
+    async function positionArrows() {
+      if (window.innerWidth < 769) return; // PC only
+      const overlay = document.getElementById("gallery-lightbox");
+      if (!overlay) return;
+      const prev = overlay.querySelector(".lightbox-prev");
+      const next = overlay.querySelector(".lightbox-next");
+      if (!prev || !next) return;
+
+      const srcs = galleryImages.map((i) => i.src);
+      const maxWidth = await getMaxDisplayedWidthPx(srcs);
+      const margin = Math.max((window.innerWidth - maxWidth) / 2, 12);
+      const arrowSize = 60; // should match CSS
+      const gap = 16;
+      const offset = Math.max(12, Math.round(margin - arrowSize - gap));
+
+      prev.style.left = offset + "px";
+      prev.style.right = "";
+      next.style.right = offset + "px";
+      next.style.left = "";
+    }
+
+    positionArrows();
+    window.addEventListener("resize", positionArrows);
+    window.positionGalleryArrows = positionArrows;
+  })();
 
   // Add keyboard navigation
   document.addEventListener("keydown", function (e) {
@@ -155,12 +194,6 @@ function openGalleryLightbox(index) {
   // Show lightbox
   lightbox.classList.add("active");
   document.body.style.overflow = "hidden"; // Prevent background scrolling
-
-  // Set CSS var with the width of the largest displayed image (desktop only)
-  if (window.innerWidth >= 769) {
-    const w = computeLargestDisplayedWidth();
-    document.documentElement.style.setProperty("--lb-width", `${w}px`);
-  }
 }
 
 // Close lightbox
@@ -168,11 +201,6 @@ function closeGalleryLightbox() {
   const lightbox = document.getElementById("gallery-lightbox");
   lightbox.classList.remove("active");
   document.body.style.overflow = ""; // Restore scrolling
-
-  // Clear CSS var when closing (desktop only)
-  if (window.innerWidth >= 769) {
-    document.documentElement.style.removeProperty("--lb-width");
-  }
 }
 
 // Navigate to previous image

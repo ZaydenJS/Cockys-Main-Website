@@ -5159,10 +5159,27 @@ body:not(.homepage) .services-premium {
 .areas-content {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  gap: 5rem;
-  align-items: center;
+  grid-template-rows: auto auto;
+  gap: 5rem 5rem;
+  align-items: start;
   position: relative;
   z-index: 2;
+}
+
+.areas-text {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.areas-visual {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.desktop-cta {
+  grid-column: 1;
+  grid-row: 2;
+  margin-top: 2rem;
 }
 
 .areas-text h2 {
@@ -5634,6 +5651,17 @@ body:not(.homepage) .services-premium {
   background: white;
 }
 
+/* Desktop/Mobile visibility controls */
+.desktop-features,
+.desktop-cta {
+  display: block;
+}
+
+.mobile-features,
+.mobile-cta {
+  display: none;
+}
+
 /* Service Areas Responsive */
 @media (max-width: 1200px) {
   .areas-content {
@@ -5646,6 +5674,17 @@ body:not(.homepage) .services-premium {
   .areas-map-container {
     max-width: 500px;
     margin: 0 auto;
+  }
+
+  /* Switch to mobile layout */
+  .desktop-features,
+  .desktop-cta {
+    display: none;
+  }
+
+  .mobile-features,
+  .mobile-cta {
+    display: block;
   }
 }
 
@@ -5669,11 +5708,11 @@ body:not(.homepage) .services-premium {
     margin: 2rem 0;
   }
 
-  .areas-features-container {
+  .mobile-features {
     order: 3;
   }
 
-  .areas-cta {
+  .mobile-cta {
     order: 4;
     margin-top: 2rem;
   }
@@ -10514,9 +10553,25 @@ body:not(.homepage) .services-premium {
 }
 
 
-/* Desktop: PC-only lightbox control positions */
+/* Desktop: keep lightbox controls positioned relative to image */
 @media (min-width: 769px) {
-
+  #gallery-lightbox .lightbox-close {
+    position: absolute !important;
+    top: 8px !important;
+    right: 8px !important;
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 1.2rem !important;
+    z-index: 10010 !important;
+    background: var(--primary-color) !important;
+    border: none !important;
+    border-radius: 50% !important;
+    color: var(--forest-primary) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 4px 15px rgba(242, 210, 147, 0.3) !important;
+  }
   .lightbox-nav {
     position: fixed !important;
     top: 50% !important;
@@ -10529,17 +10584,75 @@ body:not(.homepage) .services-premium {
     z-index: 10010 !important;
   }
   .lightbox-nav i { font-size: 1rem !important; }
-  /* Hide duplicate outer X on homepage lightbox (desktop only) */
-  #lightbox > .lightbox-close { display: none !important; }
+  #gallery-lightbox .lightbox-close i { font-size: 1.1rem !important; }
+  #gallery-lightbox .lightbox-close:hover {
+    background: var(--primary-light) !important;
+    transform: scale(1.1) !important;
+    box-shadow: 0 6px 20px rgba(242, 210, 147, 0.4) !important;
+  }
+  /* Arrows stay fixed on screen; JS sets precise left/right based on largest image width */
+  .lightbox-prev, #gallery-lightbox .lightbox-prev {
+    position: fixed !important;
+  }
+  .lightbox-next, #gallery-lightbox .lightbox-next {
+    position: fixed !important;
+  }
 
+  /* Apply same positioning rule to home page lightbox (position fixed; left/right set via JS) */
+  #lightbox .lightbox-prev {
+    position: fixed !important;
+  }
+  #lightbox .lightbox-next {
+    position: fixed !important;
+  }
 
-  /* Arrows hug the edges of the first (largest) displayed image */
-  /* Homepage lightbox: use gallery-perfect arrow logic (sticks to first image edges) */
-  #lightbox .lightbox-prev { left: calc((100vw - var(--lb-width, 80vw)) / 2 - 22px) !important; }
-  #lightbox .lightbox-next { right: calc((100vw - var(--lb-width, 80vw)) / 2 - 22px) !important; }
+  /* Ensure home page lightbox close button sticks to image */
+  #lightbox .lightbox-close {
+    position: absolute !important;
+    top: 8px !important;
+    right: 8px !important;
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 1.2rem !important;
+    z-index: 10010 !important;
+    background: var(--primary-color) !important;
+    border: none !important;
+    border-radius: 50% !important;
+    color: var(--forest-primary) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 4px 15px rgba(242, 210, 147, 0.3) !important;
+  }
 
-  .lightbox-prev { left: calc((100vw - var(--lb-width, 80vw)) / 2 - 22px) !important; }
-  .lightbox-next { right: calc((100vw - var(--lb-width, 80vw)) / 2 - 22px) !important; }
+  #lightbox .lightbox-close:hover {
+    background: var(--primary-light) !important;
+    transform: scale(1.1) !important;
+    box-shadow: 0 6px 20px rgba(242, 210, 147, 0.4) !important;
+  }
+  /* Hide the global top-right X on desktop explicitly */
+  #lightbox .mobile-global-close { display: none !important; }
+
+}
+
+/* Mobile-only: show the global top-right close button; hide it on desktop */
+.mobile-global-close { display: none; }
+@media (max-width: 768px) {
+  #lightbox .mobile-global-close {
+    display: flex !important;
+    position: fixed !important;
+    top: 12px !important;
+    right: 12px !important;
+    width: 40px !important;
+    height: 40px !important;
+    background: var(--primary-color) !important;
+    border-radius: 50% !important;
+    color: var(--forest-primary) !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 10020 !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.35) !important;
+  }
 }
 
 
