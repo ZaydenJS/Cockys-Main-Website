@@ -24,19 +24,45 @@ const galleryImages = [
   },
 ];
 
-// Preload Gallery images for instant lightbox display
+// Preload Gallery images for instant lightbox display and cache natural sizes
+const galleryImageMeta = [];
 (function preloadGalleryImages() {
   try {
-    galleryImages.forEach((item) => {
+    galleryImages.forEach((item, idx) => {
       const img = new Image();
       img.decoding = "async";
       img.loading = "eager";
       img.src = item.src;
+      img.addEventListener("load", () => {
+        galleryImageMeta[idx] = {
+          w: img.naturalWidth || 0,
+          h: img.naturalHeight || 0,
+        };
+      });
     });
   } catch (_) {}
 })();
 
 let currentGalleryImageIndex = 0;
+
+// Compute the largest possible displayed width across all images (desktop only)
+function computeLargestDisplayedWidth() {
+  const maxW = window.innerWidth * 0.8; // matches CSS max-width: 80vw
+  const maxH = window.innerHeight * 0.7; // matches CSS max-height: 70vh
+  let maxDisplayW = 0;
+
+  galleryImageMeta.forEach((meta) => {
+    if (!meta || !meta.w || !meta.h) return;
+    const aspect = meta.w / meta.h;
+    const widthLimitedByHeight = maxH * aspect;
+    const displayW = Math.min(maxW, widthLimitedByHeight);
+    if (displayW > maxDisplayW) maxDisplayW = displayW;
+  });
+
+  // Fallback if meta not ready yet
+  if (maxDisplayW === 0) return Math.round(maxW);
+  return Math.round(maxDisplayW);
+}
 
 // Initialize gallery lightbox functionality
 document.addEventListener("DOMContentLoaded", function () {
@@ -129,6 +155,12 @@ function openGalleryLightbox(index) {
   // Show lightbox
   lightbox.classList.add("active");
   document.body.style.overflow = "hidden"; // Prevent background scrolling
+
+  // Set CSS var with the width of the largest displayed image (desktop only)
+  if (window.innerWidth >= 769) {
+    const w = computeLargestDisplayedWidth();
+    document.documentElement.style.setProperty("--lb-width", `${w}px`);
+  }
 }
 
 // Close lightbox
@@ -136,6 +168,11 @@ function closeGalleryLightbox() {
   const lightbox = document.getElementById("gallery-lightbox");
   lightbox.classList.remove("active");
   document.body.style.overflow = ""; // Restore scrolling
+
+  // Clear CSS var when closing (desktop only)
+  if (window.innerWidth >= 769) {
+    document.documentElement.style.removeProperty("--lb-width");
+  }
 }
 
 // Navigate to previous image

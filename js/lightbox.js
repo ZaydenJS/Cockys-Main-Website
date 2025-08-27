@@ -81,6 +81,15 @@ function openLightbox(index) {
   lightbox.classList.add("active");
   document.body.style.overflow = "hidden"; // Prevent background scrolling
 
+  // Set CSS var with the width of the currently displayed image (desktop only)
+  if (window.innerWidth >= 769) {
+    const imgRect = lightboxImage.getBoundingClientRect();
+    document.documentElement.style.setProperty(
+      "--lb-width",
+      `${Math.round(imgRect.width)}px`
+    );
+  }
+
   // Add keyboard event listener
   document.addEventListener("keydown", handleKeyPress);
 }
@@ -93,6 +102,11 @@ function closeLightbox() {
 
   // Remove keyboard event listener
   document.removeEventListener("keydown", handleKeyPress);
+
+  // Clear CSS var when closing
+  if (window.innerWidth >= 769) {
+    document.documentElement.style.removeProperty("--lb-width");
+  }
 }
 
 // Navigate to previous image

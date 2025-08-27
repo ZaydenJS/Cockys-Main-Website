@@ -3382,6 +3382,35 @@ body:not(.homepage) .services-premium {
   color: var(--primary-color);
 }
 
+/* Mobile-specific gallery lightbox close button - fixed to top right of screen */
+@media (max-width: 768px) {
+  #gallery-lightbox .lightbox-close {
+    position: fixed !important;
+    top: 15px !important;
+    right: 15px !important;
+    width: 45px !important;
+    height: 45px !important;
+    background: var(--primary-color) !important;
+    border: 2px solid rgba(255, 255, 255, 0.9) !important;
+    border-radius: 50% !important;
+    color: var(--forest-primary) !important;
+    font-size: 1.3rem !important;
+    z-index: 10002 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+    backdrop-filter: blur(10px) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  #gallery-lightbox .lightbox-close:hover {
+    background: var(--primary-light) !important;
+    transform: scale(1.05) !important;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4) !important;
+    color: var(--forest-primary) !important;
+  }
+}
+
 .lightbox-nav {
   position: absolute;
   top: 50%;
@@ -5608,7 +5637,8 @@ body:not(.homepage) .services-premium {
 /* Service Areas Responsive */
 @media (max-width: 1200px) {
   .areas-content {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 3rem;
     text-align: center;
   }
@@ -5622,6 +5652,30 @@ body:not(.homepage) .services-premium {
 @media (max-width: 768px) {
   .service-areas-section {
     padding: 6rem 0;
+  }
+
+  /* Mobile-specific ordering: title/description -> map -> features -> CTA */
+  .areas-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .areas-text {
+    order: 1;
+  }
+
+  .areas-visual {
+    order: 2;
+    margin: 2rem 0;
+  }
+
+  .areas-features-container {
+    order: 3;
+  }
+
+  .areas-cta {
+    order: 4;
+    margin-top: 2rem;
   }
 
   .illawarra-map {
@@ -8178,7 +8232,8 @@ body:not(.homepage) .services-premium {
 .team-visual {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  margin-top: 80px;
 }
 
 .team-image-container {
@@ -9545,6 +9600,31 @@ body:not(.homepage) .services-premium {
   right: -80px;
 }
 
+/* Mobile-specific lightbox close button positioning - stick to top right of each image */
+@media (max-width: 768px) {
+  .lightbox-close {
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+    width: 40px !important;
+    height: 40px !important;
+    background: var(--primary-color) !important;
+    border: 2px solid rgba(255, 255, 255, 0.9) !important;
+    border-radius: 50% !important;
+    color: var(--forest-primary) !important;
+    font-size: 1.1rem !important;
+    z-index: 10002 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(10px) !important;
+  }
+
+  .lightbox-close:hover {
+    background: var(--primary-light) !important;
+    transform: scale(1.1) !important;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6) !important;
+  }
+}
+
 /* Gallery CTA */
 .gallery-cta {
   padding: 6rem 0;
@@ -10434,17 +10514,9 @@ body:not(.homepage) .services-premium {
 }
 
 
-/* Desktop: keep lightbox controls fixed in consistent positions */
+/* Desktop: PC-only lightbox control positions */
 @media (min-width: 769px) {
-  .lightbox-close {
-    position: fixed !important;
-    top: 10px !important;
-    right: 10px !important;
-    width: 40px !important;
-    height: 40px !important;
-    font-size: 1.2rem !important;
-    z-index: 10010 !important;
-  }
+
   .lightbox-nav {
     position: fixed !important;
     top: 50% !important;
@@ -10457,9 +10529,17 @@ body:not(.homepage) .services-premium {
     z-index: 10010 !important;
   }
   .lightbox-nav i { font-size: 1rem !important; }
-  .lightbox-close i { font-size: 1.1rem !important; }
-  .lightbox-prev { left: 20px !important; }
-  .lightbox-next { right: 20px !important; }
+  /* Hide duplicate outer X on homepage lightbox (desktop only) */
+  #lightbox > .lightbox-close { display: none !important; }
+
+
+  /* Arrows hug the edges of the first (largest) displayed image */
+  /* Homepage lightbox: use gallery-perfect arrow logic (sticks to first image edges) */
+  #lightbox .lightbox-prev { left: calc((100vw - var(--lb-width, 80vw)) / 2 - 22px) !important; }
+  #lightbox .lightbox-next { right: calc((100vw - var(--lb-width, 80vw)) / 2 - 22px) !important; }
+
+  .lightbox-prev { left: calc((100vw - var(--lb-width, 80vw)) / 2 - 22px) !important; }
+  .lightbox-next { right: calc((100vw - var(--lb-width, 80vw)) / 2 - 22px) !important; }
 }
 
 
