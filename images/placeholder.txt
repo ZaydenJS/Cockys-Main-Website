@@ -1,4 +1,4 @@
-This directory contains images for the Cock'ys Painting & Decorating website.
+This directory contains images for the Cocky's Painting & Decorating website.
 
 Required images:
 - logo.png (company logo)
