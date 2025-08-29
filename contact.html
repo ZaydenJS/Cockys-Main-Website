@@ -50,6 +50,25 @@
         text-decoration-color: #cccccc !important;
         -webkit-text-fill-color: #cccccc !important;
       }
+
+      /* Fix ABN text color on mobile - prevent auto-linking */
+      @media (max-width: 768px) {
+        /* Target ABN text in contact details section */
+        div[style*="display: flex; align-items: center; gap: 15px"] span {
+          color: #3a3a3a !important;
+          text-decoration: none !important;
+          -webkit-text-decoration-color: #3a3a3a !important;
+          text-decoration-color: #3a3a3a !important;
+          -webkit-text-fill-color: #3a3a3a !important;
+        }
+
+        /* More specific targeting for ABN number */
+        span[style*="color: var(--text-secondary)"] {
+          color: #3a3a3a !important;
+          text-decoration: none !important;
+          -webkit-text-fill-color: #3a3a3a !important;
+        }
+      }
     </style>
   </head>
   <body>
